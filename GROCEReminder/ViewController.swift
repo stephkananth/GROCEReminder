@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  GROCEReminder
 //
-//  Created by Ameeshi Goel on 10/30/18.
-//  Copyright © 2018 Ameeshi Goel. All rights reserved.
+//  Created by Steph Ananth on 11/4/18.
+//  Copyright © 2018 Steph Ananth. All rights reserved.
 //
 
 import UIKit

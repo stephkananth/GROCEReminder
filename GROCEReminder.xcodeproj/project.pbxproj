@@ -7,66 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE60A14F2189022600BFADFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE60A14E2189022600BFADFD /* AppDelegate.swift */; };
-		BE60A1512189022600BFADFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE60A1502189022600BFADFD /* ViewController.swift */; };
-		BE60A1542189022600BFADFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE60A1522189022600BFADFD /* Main.storyboard */; };
-		BE60A1572189022600BFADFD /* GROCEReminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE60A1552189022600BFADFD /* GROCEReminder.xcdatamodeld */; };
-		BE60A1592189022A00BFADFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE60A1582189022A00BFADFD /* Assets.xcassets */; };
-		BE60A15C2189022A00BFADFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE60A15A2189022A00BFADFD /* LaunchScreen.storyboard */; };
-		BE60A1672189022B00BFADFD /* GROCEReminderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE60A1662189022B00BFADFD /* GROCEReminderTests.swift */; };
-		BE60A1722189022B00BFADFD /* GROCEReminderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE60A1712189022B00BFADFD /* GROCEReminderUITests.swift */; };
+		851F2FA3218F8A9000E7B7CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851F2FA2218F8A9000E7B7CD /* AppDelegate.swift */; };
+		851F2FA5218F8A9000E7B7CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851F2FA4218F8A9000E7B7CD /* ViewController.swift */; };
+		851F2FA8218F8A9000E7B7CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851F2FA6218F8A9000E7B7CD /* Main.storyboard */; };
+		851F2FAB218F8A9000E7B7CD /* GROCEReminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 851F2FA9218F8A9000E7B7CD /* GROCEReminder.xcdatamodeld */; };
+		851F2FAD218F8A9200E7B7CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 851F2FAC218F8A9200E7B7CD /* Assets.xcassets */; };
+		851F2FB0218F8A9200E7B7CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851F2FAE218F8A9200E7B7CD /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		BE60A1632189022B00BFADFD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BE60A1432189022600BFADFD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BE60A14A2189022600BFADFD;
-			remoteInfo = GROCEReminder;
-		};
-		BE60A16E2189022B00BFADFD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BE60A1432189022600BFADFD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BE60A14A2189022600BFADFD;
-			remoteInfo = GROCEReminder;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		BE60A14B2189022600BFADFD /* GROCEReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GROCEReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE60A14E2189022600BFADFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BE60A1502189022600BFADFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BE60A1532189022600BFADFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BE60A1562189022600BFADFD /* GROCEReminder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GROCEReminder.xcdatamodel; sourceTree = "<group>"; };
-		BE60A1582189022A00BFADFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BE60A15B2189022A00BFADFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BE60A15D2189022A00BFADFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE60A1622189022B00BFADFD /* GROCEReminderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GROCEReminderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE60A1662189022B00BFADFD /* GROCEReminderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GROCEReminderTests.swift; sourceTree = "<group>"; };
-		BE60A1682189022B00BFADFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE60A16D2189022B00BFADFD /* GROCEReminderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GROCEReminderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE60A1712189022B00BFADFD /* GROCEReminderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GROCEReminderUITests.swift; sourceTree = "<group>"; };
-		BE60A1732189022B00BFADFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		851F2F9F218F8A9000E7B7CD /* GROCEReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GROCEReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		851F2FA2218F8A9000E7B7CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		851F2FA4218F8A9000E7B7CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		851F2FA7218F8A9000E7B7CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		851F2FAA218F8A9000E7B7CD /* GROCEReminder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GROCEReminder.xcdatamodel; sourceTree = "<group>"; };
+		851F2FAC218F8A9200E7B7CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		851F2FAF218F8A9200E7B7CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		851F2FB1218F8A9200E7B7CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BE60A1482189022600BFADFD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BE60A15F2189022B00BFADFD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BE60A16A2189022B00BFADFD /* Frameworks */ = {
+		851F2F9C218F8A9000E7B7CD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,68 +37,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BE60A1422189022600BFADFD = {
+		851F2F96218F8A9000E7B7CD = {
 			isa = PBXGroup;
 			children = (
-				BE60A14D2189022600BFADFD /* GROCEReminder */,
-				BE60A1652189022B00BFADFD /* GROCEReminderTests */,
-				BE60A1702189022B00BFADFD /* GROCEReminderUITests */,
-				BE60A14C2189022600BFADFD /* Products */,
+				851F2FA1218F8A9000E7B7CD /* GROCEReminder */,
+				851F2FA0218F8A9000E7B7CD /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		BE60A14C2189022600BFADFD /* Products */ = {
+		851F2FA0218F8A9000E7B7CD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BE60A14B2189022600BFADFD /* GROCEReminder.app */,
-				BE60A1622189022B00BFADFD /* GROCEReminderTests.xctest */,
-				BE60A16D2189022B00BFADFD /* GROCEReminderUITests.xctest */,
+				851F2F9F218F8A9000E7B7CD /* GROCEReminder.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BE60A14D2189022600BFADFD /* GROCEReminder */ = {
+		851F2FA1218F8A9000E7B7CD /* GROCEReminder */ = {
 			isa = PBXGroup;
 			children = (
-				BE60A14E2189022600BFADFD /* AppDelegate.swift */,
-				BE60A1502189022600BFADFD /* ViewController.swift */,
-				BE60A1522189022600BFADFD /* Main.storyboard */,
-				BE60A1582189022A00BFADFD /* Assets.xcassets */,
-				BE60A15A2189022A00BFADFD /* LaunchScreen.storyboard */,
-				BE60A15D2189022A00BFADFD /* Info.plist */,
-				BE60A1552189022600BFADFD /* GROCEReminder.xcdatamodeld */,
+				851F2FA2218F8A9000E7B7CD /* AppDelegate.swift */,
+				851F2FA4218F8A9000E7B7CD /* ViewController.swift */,
+				851F2FA6218F8A9000E7B7CD /* Main.storyboard */,
+				851F2FAC218F8A9200E7B7CD /* Assets.xcassets */,
+				851F2FAE218F8A9200E7B7CD /* LaunchScreen.storyboard */,
+				851F2FB1218F8A9200E7B7CD /* Info.plist */,
+				851F2FA9218F8A9000E7B7CD /* GROCEReminder.xcdatamodeld */,
 			);
 			path = GROCEReminder;
-			sourceTree = "<group>";
-		};
-		BE60A1652189022B00BFADFD /* GROCEReminderTests */ = {
-			isa = PBXGroup;
-			children = (
-				BE60A1662189022B00BFADFD /* GROCEReminderTests.swift */,
-				BE60A1682189022B00BFADFD /* Info.plist */,
-			);
-			path = GROCEReminderTests;
-			sourceTree = "<group>";
-		};
-		BE60A1702189022B00BFADFD /* GROCEReminderUITests */ = {
-			isa = PBXGroup;
-			children = (
-				BE60A1712189022B00BFADFD /* GROCEReminderUITests.swift */,
-				BE60A1732189022B00BFADFD /* Info.plist */,
-			);
-			path = GROCEReminderUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BE60A14A2189022600BFADFD /* GROCEReminder */ = {
+		851F2F9E218F8A9000E7B7CD /* GROCEReminder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BE60A1762189022B00BFADFD /* Build configuration list for PBXNativeTarget "GROCEReminder" */;
+			buildConfigurationList = 851F2FB4218F8A9200E7B7CD /* Build configuration list for PBXNativeTarget "GROCEReminder" */;
 			buildPhases = (
-				BE60A1472189022600BFADFD /* Sources */,
-				BE60A1482189022600BFADFD /* Frameworks */,
-				BE60A1492189022600BFADFD /* Resources */,
+				851F2F9B218F8A9000E7B7CD /* Sources */,
+				851F2F9C218F8A9000E7B7CD /* Frameworks */,
+				851F2F9D218F8A9000E7B7CD /* Resources */,
 			);
 			buildRules = (
 			);
@@ -145,69 +84,25 @@
 			);
 			name = GROCEReminder;
 			productName = GROCEReminder;
-			productReference = BE60A14B2189022600BFADFD /* GROCEReminder.app */;
+			productReference = 851F2F9F218F8A9000E7B7CD /* GROCEReminder.app */;
 			productType = "com.apple.product-type.application";
-		};
-		BE60A1612189022B00BFADFD /* GROCEReminderTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BE60A1792189022B00BFADFD /* Build configuration list for PBXNativeTarget "GROCEReminderTests" */;
-			buildPhases = (
-				BE60A15E2189022B00BFADFD /* Sources */,
-				BE60A15F2189022B00BFADFD /* Frameworks */,
-				BE60A1602189022B00BFADFD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BE60A1642189022B00BFADFD /* PBXTargetDependency */,
-			);
-			name = GROCEReminderTests;
-			productName = GROCEReminderTests;
-			productReference = BE60A1622189022B00BFADFD /* GROCEReminderTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		BE60A16C2189022B00BFADFD /* GROCEReminderUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BE60A17C2189022B00BFADFD /* Build configuration list for PBXNativeTarget "GROCEReminderUITests" */;
-			buildPhases = (
-				BE60A1692189022B00BFADFD /* Sources */,
-				BE60A16A2189022B00BFADFD /* Frameworks */,
-				BE60A16B2189022B00BFADFD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BE60A16F2189022B00BFADFD /* PBXTargetDependency */,
-			);
-			name = GROCEReminderUITests;
-			productName = GROCEReminderUITests;
-			productReference = BE60A16D2189022B00BFADFD /* GROCEReminderUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BE60A1432189022600BFADFD /* Project object */ = {
+		851F2F97218F8A9000E7B7CD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1000;
-				ORGANIZATIONNAME = "Ameeshi Goel";
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Steph Ananth";
 				TargetAttributes = {
-					BE60A14A2189022600BFADFD = {
-						CreatedOnToolsVersion = 10.0;
-					};
-					BE60A1612189022B00BFADFD = {
-						CreatedOnToolsVersion = 10.0;
-						TestTargetID = BE60A14A2189022600BFADFD;
-					};
-					BE60A16C2189022B00BFADFD = {
-						CreatedOnToolsVersion = 10.0;
-						TestTargetID = BE60A14A2189022600BFADFD;
+					851F2F9E218F8A9000E7B7CD = {
+						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
-			buildConfigurationList = BE60A1462189022600BFADFD /* Build configuration list for PBXProject "GROCEReminder" */;
+			buildConfigurationList = 851F2F9A218F8A9000E7B7CD /* Build configuration list for PBXProject "GROCEReminder" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -215,100 +110,55 @@
 				en,
 				Base,
 			);
-			mainGroup = BE60A1422189022600BFADFD;
-			productRefGroup = BE60A14C2189022600BFADFD /* Products */;
+			mainGroup = 851F2F96218F8A9000E7B7CD;
+			productRefGroup = 851F2FA0218F8A9000E7B7CD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BE60A14A2189022600BFADFD /* GROCEReminder */,
-				BE60A1612189022B00BFADFD /* GROCEReminderTests */,
-				BE60A16C2189022B00BFADFD /* GROCEReminderUITests */,
+				851F2F9E218F8A9000E7B7CD /* GROCEReminder */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BE60A1492189022600BFADFD /* Resources */ = {
+		851F2F9D218F8A9000E7B7CD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE60A15C2189022A00BFADFD /* LaunchScreen.storyboard in Resources */,
-				BE60A1592189022A00BFADFD /* Assets.xcassets in Resources */,
-				BE60A1542189022600BFADFD /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BE60A1602189022B00BFADFD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BE60A16B2189022B00BFADFD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				851F2FB0218F8A9200E7B7CD /* LaunchScreen.storyboard in Resources */,
+				851F2FAD218F8A9200E7B7CD /* Assets.xcassets in Resources */,
+				851F2FA8218F8A9000E7B7CD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BE60A1472189022600BFADFD /* Sources */ = {
+		851F2F9B218F8A9000E7B7CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE60A1572189022600BFADFD /* GROCEReminder.xcdatamodeld in Sources */,
-				BE60A1512189022600BFADFD /* ViewController.swift in Sources */,
-				BE60A14F2189022600BFADFD /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BE60A15E2189022B00BFADFD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BE60A1672189022B00BFADFD /* GROCEReminderTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BE60A1692189022B00BFADFD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BE60A1722189022B00BFADFD /* GROCEReminderUITests.swift in Sources */,
+				851F2FAB218F8A9000E7B7CD /* GROCEReminder.xcdatamodeld in Sources */,
+				851F2FA5218F8A9000E7B7CD /* ViewController.swift in Sources */,
+				851F2FA3218F8A9000E7B7CD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		BE60A1642189022B00BFADFD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BE60A14A2189022600BFADFD /* GROCEReminder */;
-			targetProxy = BE60A1632189022B00BFADFD /* PBXContainerItemProxy */;
-		};
-		BE60A16F2189022B00BFADFD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BE60A14A2189022600BFADFD /* GROCEReminder */;
-			targetProxy = BE60A16E2189022B00BFADFD /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		BE60A1522189022600BFADFD /* Main.storyboard */ = {
+		851F2FA6218F8A9000E7B7CD /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BE60A1532189022600BFADFD /* Base */,
+				851F2FA7218F8A9000E7B7CD /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		BE60A15A2189022A00BFADFD /* LaunchScreen.storyboard */ = {
+		851F2FAE218F8A9200E7B7CD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BE60A15B2189022A00BFADFD /* Base */,
+				851F2FAF218F8A9200E7B7CD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -316,7 +166,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BE60A1742189022B00BFADFD /* Debug */ = {
+		851F2FB2218F8A9200E7B7CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -367,7 +217,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -377,7 +227,7 @@
 			};
 			name = Debug;
 		};
-		BE60A1752189022B00BFADFD /* Release */ = {
+		851F2FB3218F8A9200E7B7CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -422,7 +272,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -432,159 +282,59 @@
 			};
 			name = Release;
 		};
-		BE60A1772189022B00BFADFD /* Debug */ = {
+		851F2FB5218F8A9200E7B7CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NTT855PT2B;
+				DEVELOPMENT_TEAM = 9322UFZ9MA;
 				INFOPLIST_FILE = GROCEReminder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ameeshi.GROCEReminder;
+				PRODUCT_BUNDLE_IDENTIFIER = StephAnanth.GROCEReminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		BE60A1782189022B00BFADFD /* Release */ = {
+		851F2FB6218F8A9200E7B7CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NTT855PT2B;
+				DEVELOPMENT_TEAM = 9322UFZ9MA;
 				INFOPLIST_FILE = GROCEReminder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ameeshi.GROCEReminder;
+				PRODUCT_BUNDLE_IDENTIFIER = StephAnanth.GROCEReminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		BE60A17A2189022B00BFADFD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NTT855PT2B;
-				INFOPLIST_FILE = GROCEReminderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = ameeshi.GROCEReminderTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GROCEReminder.app/GROCEReminder";
-			};
-			name = Debug;
-		};
-		BE60A17B2189022B00BFADFD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NTT855PT2B;
-				INFOPLIST_FILE = GROCEReminderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = ameeshi.GROCEReminderTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GROCEReminder.app/GROCEReminder";
-			};
-			name = Release;
-		};
-		BE60A17D2189022B00BFADFD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NTT855PT2B;
-				INFOPLIST_FILE = GROCEReminderUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = ameeshi.GROCEReminderUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GROCEReminder;
-			};
-			name = Debug;
-		};
-		BE60A17E2189022B00BFADFD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NTT855PT2B;
-				INFOPLIST_FILE = GROCEReminderUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = ameeshi.GROCEReminderUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GROCEReminder;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BE60A1462189022600BFADFD /* Build configuration list for PBXProject "GROCEReminder" */ = {
+		851F2F9A218F8A9000E7B7CD /* Build configuration list for PBXProject "GROCEReminder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BE60A1742189022B00BFADFD /* Debug */,
-				BE60A1752189022B00BFADFD /* Release */,
+				851F2FB2218F8A9200E7B7CD /* Debug */,
+				851F2FB3218F8A9200E7B7CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BE60A1762189022B00BFADFD /* Build configuration list for PBXNativeTarget "GROCEReminder" */ = {
+		851F2FB4218F8A9200E7B7CD /* Build configuration list for PBXNativeTarget "GROCEReminder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BE60A1772189022B00BFADFD /* Debug */,
-				BE60A1782189022B00BFADFD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BE60A1792189022B00BFADFD /* Build configuration list for PBXNativeTarget "GROCEReminderTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BE60A17A2189022B00BFADFD /* Debug */,
-				BE60A17B2189022B00BFADFD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BE60A17C2189022B00BFADFD /* Build configuration list for PBXNativeTarget "GROCEReminderUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BE60A17D2189022B00BFADFD /* Debug */,
-				BE60A17E2189022B00BFADFD /* Release */,
+				851F2FB5218F8A9200E7B7CD /* Debug */,
+				851F2FB6218F8A9200E7B7CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -592,17 +342,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		BE60A1552189022600BFADFD /* GROCEReminder.xcdatamodeld */ = {
+		851F2FA9218F8A9000E7B7CD /* GROCEReminder.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				BE60A1562189022600BFADFD /* GROCEReminder.xcdatamodel */,
+				851F2FAA218F8A9000E7B7CD /* GROCEReminder.xcdatamodel */,
 			);
-			currentVersion = BE60A1562189022600BFADFD /* GROCEReminder.xcdatamodel */;
+			currentVersion = 851F2FAA218F8A9000E7B7CD /* GROCEReminder.xcdatamodel */;
 			path = GROCEReminder.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = BE60A1432189022600BFADFD /* Project object */;
+	rootObject = 851F2F97218F8A9000E7B7CD /* Project object */;
 }
