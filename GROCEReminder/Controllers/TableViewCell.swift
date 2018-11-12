@@ -13,6 +13,7 @@ import CoreData
 class TableViewCell: UITableViewCell {
   
   @IBOutlet weak var name: UILabel!
+  @IBOutlet weak var expirationDate: UILabel!
   
   override func awakeFromNib() {
     super.awakeFromNib()

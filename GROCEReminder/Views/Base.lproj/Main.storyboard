@@ -22,7 +22,7 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bCI-46-bpy" customClass="TableViewCell" customModule="GROCEReminder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bCI-46-bpy" id="rQj-wI-VqU" customClass="TableViewCell" customModule="GROCEReminder" customModuleProvider="target">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bCI-46-bpy" id="rQj-wI-VqU" userLabel="cell" customClass="TableViewCell" customModule="GROCEReminder" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
@@ -249,7 +249,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="iy7-o1-gS1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="206"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="205.5"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="563468875.63035297">
                                                         <!--2018-11-09 15:07:55 +0000-->
                                                     </date>
@@ -275,7 +275,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="b6a-PA-kKb">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="185"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="184.5"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="563468860.47134602">
                                                         <!--2018-11-09 15:07:40 +0000-->
                                                     </date>
@@ -323,7 +323,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zBt-ca-PVq"/>
+        <segue reference="Ihm-sy-zoI"/>
         <segue reference="W2f-ua-QQ7"/>
     </inferredMetricsTieBreakers>
 </document>
