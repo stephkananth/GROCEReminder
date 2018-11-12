@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 class Item: NSObject, NSCoding {
   

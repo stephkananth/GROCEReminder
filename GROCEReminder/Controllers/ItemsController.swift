@@ -35,7 +35,7 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
     // Again set up the stack to interface with CoreData
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let context = appDelegate.persistentContainer.viewContext
-    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Entity")
+    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Food")
     request.returnsObjectsAsFaults = false
     do {
       let result = try context.fetch(request)
@@ -99,7 +99,7 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
     if editingStyle == .delete {
       let appDelegate = UIApplication.shared.delegate as! AppDelegate
       let context = appDelegate.persistentContainer.viewContext
-      let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Entity")
+      let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Food")
       request.returnsObjectsAsFaults = false
       do {
         let result = try context.fetch(request)
