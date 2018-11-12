@@ -29,6 +29,11 @@ class DetailViewController: UIViewController {
   @IBOutlet weak var purchaseDateLabel: UILabel!
   @IBOutlet weak var expirationDateLabel: UILabel!
   
+  var viewModel: ItemDetailViewModel?
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+  }
   
   var detailItem: Item? {
     didSet {
@@ -51,19 +56,19 @@ class DetailViewController: UIViewController {
       }
       if let expirationDate = self.expirationDateLabel {
         expirationDate.text = detail.purchaseDate.toString(dateFormat: "MM/DD/YY")
+      }
     }
-  }
-  
+    
     func viewDidLoad() {
-    super.viewDidLoad()
-    self.configureView()
-  }
-  
+      super.viewDidLoad()
+      self.configureView()
+    }
+    
     func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+      super.didReceiveMemoryWarning()
+      // Dispose of any resources that can be recreated.
+    }
+    
+    
   }
-  
-  
-}
 }

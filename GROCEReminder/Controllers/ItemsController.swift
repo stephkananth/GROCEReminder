@@ -10,18 +10,19 @@ import CoreData
 
 class ItemsController: UITableViewController, AddItemControllerDelegate {
   
-  
   // MARK: - Properties
   var items = [Item]()
   var dataManager = DataManager()
+  
+  let viewModel = ItemsViewModel()
   let test = "Test"
   
   func loadItems(data: NSManagedObject){
-    let newItem = Item(coder: NSCoder())
-    newItem.name = data.value(forKey: "name") as! String
-    newItem.expirationDate = (data.value(forKey: "expiration_date") as! Date)
-    newItem.purchaseDate = (data.value(forKey: "purchase_date") as! Date)
-    newItem.location = (data.value(forKey: "location") as! String)
+    let name = data.value(forKey: "name") as! String
+    let expirationDate = (data.value(forKey: "expiration_date") as! Date)
+    let purchaseDate = (data.value(forKey: "purchase_date") as! Date)
+    let location = (data.value(forKey: "location") as! String)
+    let newItem = Item(name: name, location: location, purchase_date: purchaseDate, expiration_date: expirationDate)
     items.append(newItem)
   }
   
@@ -31,6 +32,9 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
     
     let cellNib = UINib(nibName: "TableViewCell", bundle: nil)
     tableView.register(cellNib, forCellReuseIdentifier: "cell")
+    //    cellNib.name?.text = viewModel.nameForRowAtIndexPath(indexPath)
+    //    cellNib.expiration_date?.text = viewModel.dateForRowAtIndexPath(indexPath)
+    
     
     // Again set up the stack to interface with CoreData
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -47,7 +51,7 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
       print("Failed")
     }
     
-//    self.navigationItem.leftBarButtonItem = self.editButtonItem
+    //    self.navigationItem.leftBarButtonItem = self.editButtonItem
     dataManager.loadItems()
     items = dataManager.items
   }

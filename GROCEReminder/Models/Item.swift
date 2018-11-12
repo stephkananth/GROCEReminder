@@ -19,14 +19,14 @@ class Item: NSObject, NSCoding {
   
   // MARK: - General
   
-  init(location: String, name: String, purchase_date: Date, expiration_date: Date) {
+  init(name: String, location: String, purchase_date: Date, expiration_date: Date) {
     self.name = name
     self.location = location
     self.purchaseDate = purchase_date
     self.expirationDate = expiration_date
     super.init()
   }
-
+  
   // MARK: - Encoding
   
   // marking 'required' in case of subclassing, this init will be
@@ -47,11 +47,11 @@ class Item: NSObject, NSCoding {
     aCoder.encode(purchaseDate, forKey: "purchase_date")
   }
   
-    func encodeWithCoder(aCoder: NSCoder) {
-      aCoder.encode(expirationDate, forKey: "expiration_date")
-      aCoder.encode(location, forKey: "location")
-      aCoder.encode(name, forKey: "name")
-      aCoder.encode(purchaseDate, forKey: "purchase_date")
-    }
+  func encodeWithCoder(aCoder: NSCoder) {
+    aCoder.encode(expirationDate, forKey: "expiration_date")
+    aCoder.encode(location, forKey: "location")
+    aCoder.encode(name, forKey: "name")
+    aCoder.encode(purchaseDate, forKey: "purchase_date")
+  }
   
 }

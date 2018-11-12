@@ -7,11 +7,8 @@
 //
 
 import Foundation
-import UIKit
-import Foundation
-import Photos
 import CoreData
-
+import UIKit
 
 // MARK: Protocol Methods
 
@@ -76,11 +73,15 @@ class AddItemController: UITableViewController, UITextFieldDelegate, UIImagePick
   }
   
   @IBAction func done() {
-    let item = Item(location: locationField.text!, name: nameField.text!, purchase_date: purchaseDateField.date, expiration_date: expirationDateField.date)
-//    item.name = nameField.text!
-//    item.expirationDate = expirationDateField.date
-//    item.location = locationField.text!
-//    item.purchaseDate = purchaseDateField.date
+    let name:String = nameField.text!
+    let location:String = locationField.text!
+    let purchase_date:Date = purchaseDateField.date
+    let expiration_date:Date = expirationDateField.date
+    let item = Item(name: name, location: location, purchase_date: purchase_date, expiration_date: expiration_date)
+    //    item.name = nameField.text!
+    //    item.expirationDate = expirationDateField.date
+    //    item.location = locationField.text!
+    //    item.purchaseDate = purchaseDateField.date
     saveItem(item: item)
     if item.name.count > 0 {
       delegate?.addItemController(controller: self, didFinishAddingItem: item)
