@@ -84,6 +84,4 @@ class DataManager {
       }
     }
   }
-  
-  
 }

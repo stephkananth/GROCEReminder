@@ -53,5 +53,4 @@ class Item: NSObject, NSCoding {
     aCoder.encode(name, forKey: "name")
     aCoder.encode(purchaseDate, forKey: "purchase_date")
   }
-  
 }

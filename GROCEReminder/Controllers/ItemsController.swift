@@ -145,6 +145,5 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
     
     dismiss(animated: true, completion: nil)
   }
-  
 }
 

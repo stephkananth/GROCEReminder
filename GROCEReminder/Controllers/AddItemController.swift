@@ -21,6 +21,7 @@ protocol AddItemControllerDelegate: class {
 // MARK: - AddItemController
 
 class AddItemController: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+  
   // MARK: - Outlets
   @IBOutlet weak var nameField: UITextField!
   @IBOutlet weak var expirationDateField: UIDatePicker!

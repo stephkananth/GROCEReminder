@@ -19,7 +19,6 @@ extension Date
     dateFormatter.dateFormat = format
     return dateFormatter.string(from: self)
   }
-  
 }
 
 class DetailViewController: UIViewController {
@@ -68,7 +67,5 @@ class DetailViewController: UIViewController {
       super.didReceiveMemoryWarning()
       // Dispose of any resources that can be recreated.
     }
-    
-    
   }
 }
