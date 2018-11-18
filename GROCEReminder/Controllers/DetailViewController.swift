@@ -52,10 +52,10 @@ class DetailViewController: UIViewController {
         location.text = detail.location
       }
       if let purchaseDate = self.purchaseDateLabel {
-        purchaseDate.text = detail.purchaseDate.toString(dateFormat: "MM/DD/YY")
+        purchaseDate.text = detail.purchaseDate.toString(dateFormat: "MM/dd/YY")
       }
       if let expirationDate = self.expirationDateLabel {
-        expirationDate.text = detail.purchaseDate.toString(dateFormat: "MM/DD/YY")
+        expirationDate.text = detail.expirationDate.toString(dateFormat: "MM/dd/YY")
       }
     }
   }
