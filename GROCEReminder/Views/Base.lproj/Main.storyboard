@@ -26,6 +26,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="7Ka-iv-Vro" kind="show" identifier="showDetail" id="CTb-i5-tJ3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -86,7 +89,7 @@
                                     <navigationItem id="pgT-CX-9SZ">
                                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="6f1-zI-cXo">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="W2f-ua-QQ7"/>
+                                                <segue destination="BYZ-38-t0r" kind="show" identifier="showList" id="W2f-ua-QQ7"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="K5m-53-tR0"/>
@@ -323,6 +326,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="CTb-i5-tJ3"/>
         <segue reference="Ihm-sy-zoI"/>
         <segue reference="W2f-ua-QQ7"/>
     </inferredMetricsTieBreakers>
