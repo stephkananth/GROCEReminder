@@ -50,7 +50,7 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
       print("Failed")
     }
     
-    print(items.map({ $0.name }))
+//    print(items.map({ $0.name }))
     
     //    self.navigationItem.leftBarButtonItem = self.editButtonItem
 //    dataManager.loadItems()

@@ -140,9 +140,10 @@
                         <viewLayoutGuide key="safeArea" id="t2g-Kg-mEA"/>
                     </view>
                     <connections>
-                        <outlet property="expirationDateLabel" destination="szQ-bR-aQ2" id="d3g-CS-JB4"/>
+                        <outlet property="expirationDateLabel" destination="szQ-bR-aQ2" id="k55-TK-Ls6"/>
+                        <outlet property="locationLabel" destination="95F-rk-VyY" id="mFy-dR-H2b"/>
                         <outlet property="nameLabel" destination="ccR-N4-sTt" id="NtD-hj-5bD"/>
-                        <outlet property="purchaseDateLabel" destination="a8M-H7-1pG" id="bj4-Wd-yBU"/>
+                        <outlet property="purchaseDateLabel" destination="a8M-H7-1pG" id="GUR-Ns-jTh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5Y-AD-GIq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -326,7 +327,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="CTb-i5-tJ3"/>
         <segue reference="Ihm-sy-zoI"/>
         <segue reference="W2f-ua-QQ7"/>
     </inferredMetricsTieBreakers>

@@ -46,6 +46,7 @@ class DetailViewController: UIViewController {
     if let detail: Item = self.detailItem {
       if let name = self.nameLabel {
         name.text = detail.name
+        self.navigationItem.title = detail.name
       }
       if let location = self.locationLabel {
         location.text = detail.location
@@ -57,15 +58,15 @@ class DetailViewController: UIViewController {
         expirationDate.text = detail.purchaseDate.toString(dateFormat: "MM/DD/YY")
       }
     }
+  }
     
-    func viewDidLoad() {
+    override func viewDidLoad() {
       super.viewDidLoad()
       self.configureView()
     }
     
-    func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
       // Dispose of any resources that can be recreated.
     }
-  }
 }
