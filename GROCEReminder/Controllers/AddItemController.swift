@@ -73,6 +73,7 @@ class AddItemController: UITableViewController, UITextFieldDelegate, UIImagePick
     delegate?.addItemControllerDidCancel(controller: self)
   }
   
+  
   @IBAction func done() {
     let name:String = nameField.text!
     let location:String = locationField.text!
@@ -84,9 +85,7 @@ class AddItemController: UITableViewController, UITextFieldDelegate, UIImagePick
     //    item.location = locationField.text!
     //    item.purchaseDate = purchaseDateField.date
     saveItem(item: item)
-    if item.name.count > 0 {
-      delegate?.addItemController(controller: self, didFinishAddingItem: item)
-    }
+    delegate?.addItemController(controller: self, didFinishAddingItem: item)
   }
   
   // MARK: - Table View

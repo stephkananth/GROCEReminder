@@ -304,17 +304,17 @@
                     <navigationItem key="navigationItem" title="Add Contact" id="NRA-Dr-TTO" userLabel="Add Item">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="53x-TQ-xlh">
                             <connections>
-                                <action selector="cancel" destination="wMu-kh-z6Q" id="qsb-bQ-Cuu"/>
+                                <action selector="cancel" destination="wMu-kh-z6Q" id="dXX-ma-0uL"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Re7-gi-Zpw">
                             <connections>
-                                <action selector="done" destination="wMu-kh-z6Q" id="2a7-Nk-SIo"/>
+                                <action selector="done" destination="wMu-kh-z6Q" id="6Xj-TW-LGJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="doneBarButton" destination="Re7-gi-Zpw" id="7fC-e3-g5H"/>
+                        <outlet property="doneBarButton" destination="Re7-gi-Zpw" id="1GC-Qi-Nfd"/>
                         <outlet property="expirationDateField" destination="b6a-PA-kKb" id="oY3-13-RJK"/>
                         <outlet property="locationField" destination="wq2-lS-pm9" id="gFy-GJ-W8w"/>
                         <outlet property="nameField" destination="gih-J4-Inp" id="G51-4b-VyE"/>
@@ -327,7 +327,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="CTb-i5-tJ3"/>
         <segue reference="Ihm-sy-zoI"/>
         <segue reference="W2f-ua-QQ7"/>
     </inferredMetricsTieBreakers>

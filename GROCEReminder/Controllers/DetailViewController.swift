@@ -13,7 +13,7 @@ import CoreData
 // https://stackoverflow.com/questions/42524651/convert-nsdate-to-string-in-ios-swift/42524767
 extension Date
 {
-  func toString( dateFormat format  : String ) -> String
+  func toString( dateFormat format: String ) -> String
   {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = format
