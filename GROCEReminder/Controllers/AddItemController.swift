@@ -38,7 +38,7 @@ class AddItemController: UITableViewController, UITextFieldDelegate, UIImagePick
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let context = appDelegate.persistentContainer.viewContext
     // Specifically select the People entity to save this object to
-    let entity = NSEntityDescription.entity(forEntityName: "Entity", in: context)
+    let entity = NSEntityDescription.entity(forEntityName: "Food", in: context)
     let newItem = NSManagedObject(entity: entity!, insertInto: context)
     // Set values one at a time and save
     newItem.setValue(item.name, forKey: "name")

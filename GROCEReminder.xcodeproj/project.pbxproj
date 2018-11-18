@@ -16,7 +16,6 @@
 		851F2FB0218F8A9200E7B7CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851F2FAE218F8A9200E7B7CD /* LaunchScreen.storyboard */; };
 		851F2FBE218F93F000E7B7CD /* ItemsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851F2FBD218F93F000E7B7CD /* ItemsController.swift */; };
 		851F2FC1218F94A200E7B7CD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851F2FC0218F94A200E7B7CD /* Item.swift */; };
-		851F2FC3218F974500E7B7CD /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851F2FC2218F974500E7B7CD /* DataManager.swift */; };
 		851F2FC5218F99D500E7B7CD /* AddItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851F2FC4218F99D500E7B7CD /* AddItemController.swift */; };
 		851F2FC7218F9ADD00E7B7CD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851F2FC6218F9ADD00E7B7CD /* DetailViewController.swift */; };
 		856637B021996D3600473BE5 /* ItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856637AF21996D3500473BE5 /* ItemsViewModel.swift */; };
@@ -35,7 +34,6 @@
 		851F2FB1218F8A9200E7B7CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		851F2FBD218F93F000E7B7CD /* ItemsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsController.swift; sourceTree = "<group>"; };
 		851F2FC0218F94A200E7B7CD /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		851F2FC2218F974500E7B7CD /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		851F2FC4218F99D500E7B7CD /* AddItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemController.swift; sourceTree = "<group>"; };
 		851F2FC6218F9ADD00E7B7CD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		856637AF21996D3500473BE5 /* ItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModel.swift; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				851F2FC0218F94A200E7B7CD /* Item.swift */,
-				851F2FC2218F974500E7B7CD /* DataManager.swift */,
 				856637AF21996D3500473BE5 /* ItemsViewModel.swift */,
 				856637B321996E2B00473BE5 /* ItemDetailViewModel.swift */,
 			);
@@ -207,7 +204,6 @@
 				851F2FC5218F99D500E7B7CD /* AddItemController.swift in Sources */,
 				850AD1692195E99A00FA1078 /* TableViewCell.swift in Sources */,
 				851F2FC1218F94A200E7B7CD /* Item.swift in Sources */,
-				851F2FC3218F974500E7B7CD /* DataManager.swift in Sources */,
 				851F2FAB218F8A9000E7B7CD /* GROCEReminder.xcdatamodeld in Sources */,
 				851F2FBE218F93F000E7B7CD /* ItemsController.swift in Sources */,
 				851F2FA3218F8A9000E7B7CD /* AppDelegate.swift in Sources */,
@@ -359,13 +355,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9322UFZ9MA;
+				DEVELOPMENT_TEAM = UM7RW2TAM7;
 				INFOPLIST_FILE = GROCEReminder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = StephAnanth.GROCEReminder;
+				PRODUCT_BUNDLE_IDENTIFIER = Gfruity.GROCEReminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -377,13 +373,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9322UFZ9MA;
+				DEVELOPMENT_TEAM = UM7RW2TAM7;
 				INFOPLIST_FILE = GROCEReminder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = StephAnanth.GROCEReminder;
+				PRODUCT_BUNDLE_IDENTIFIER = Gfruity.GROCEReminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

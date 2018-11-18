@@ -12,7 +12,6 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
   
   // MARK: - Properties
   var items = [Item]()
-  var dataManager = DataManager()
   
   let viewModel = ItemsViewModel()
   let test = "Test"
@@ -51,9 +50,11 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
       print("Failed")
     }
     
+    print(items.map({ $0.name }))
+    
     //    self.navigationItem.leftBarButtonItem = self.editButtonItem
-    dataManager.loadItems()
-    items = dataManager.items
+//    dataManager.loadItems()
+//    items = dataManager.items
   }
   
   override func didReceiveMemoryWarning() {
