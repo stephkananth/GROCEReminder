@@ -36,7 +36,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Settings" style="plain" id="ws9-Oc-gt5"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="IqF-Xb-m4M">
                             <connections>
-                                <segue destination="wMu-kh-z6Q" kind="show" id="Ihm-sy-zoI"/>
+                                <segue destination="dgi-D8-bXb" kind="show" identifier="addItem" id="NvN-wf-bzk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -159,7 +159,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="wMu-kh-z6Q" kind="show" id="zBt-ca-PVq"/>
+                        <segue destination="wMu-kh-z6Q" kind="relationship" relationship="rootViewController" id="rdW-FM-ODv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n19-7T-78c" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -323,11 +323,10 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ing-Ug-YEu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="341.60000000000002" y="757.87106446776613"/>
+            <point key="canvasLocation" x="22" y="745"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ihm-sy-zoI"/>
         <segue reference="W2f-ua-QQ7"/>
     </inferredMetricsTieBreakers>
 </document>

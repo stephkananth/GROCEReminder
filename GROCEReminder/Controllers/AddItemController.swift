@@ -85,6 +85,7 @@ class AddItemController: UITableViewController, UITextFieldDelegate, UIImagePick
     //    item.location = locationField.text!
     //    item.purchaseDate = purchaseDateField.date
     saveItem(item: item)
+    print("HERE")
     delegate?.addItemController(controller: self, didFinishAddingItem: item)
   }
   
