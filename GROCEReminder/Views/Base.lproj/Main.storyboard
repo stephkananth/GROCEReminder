@@ -327,6 +327,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="CTb-i5-tJ3"/>
         <segue reference="Ihm-sy-zoI"/>
         <segue reference="W2f-ua-QQ7"/>
     </inferredMetricsTieBreakers>

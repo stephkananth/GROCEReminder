@@ -88,10 +88,11 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath) as! TableViewCell
     
     let item = items[indexPath.row]
-    cell.textLabel!.text = item.name
+    cell.name!.text = item.name
+    cell.expirationDate.text = item.expirationDate.toString(dateFormat: "MM/dd/YY")
     return cell
   }
   
