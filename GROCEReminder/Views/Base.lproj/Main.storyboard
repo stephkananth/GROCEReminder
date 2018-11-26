@@ -27,7 +27,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="7Ka-iv-Vro" kind="showDetail" identifier="showDetail" id="CTb-i5-tJ3"/>
+                                    <segue destination="7Ka-iv-Vro" kind="show" identifier="showDetail" id="CTb-i5-tJ3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -40,6 +40,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,84 +55,68 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTx-RE-zTM">
-                                <rect key="frame" x="27" y="98" width="43" height="21"/>
+                                <rect key="frame" x="27" y="142" width="43" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchase Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ky0-q4-7DK">
-                                <rect key="frame" x="27" y="140" width="125" height="21"/>
+                                <rect key="frame" x="27" y="184" width="125" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B00-mB-B9N">
-                                <rect key="frame" x="27" y="180" width="76" height="21"/>
+                                <rect key="frame" x="27" y="224" width="76" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiration Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lw5-ar-ZDc">
-                                <rect key="frame" x="27" y="228" width="131" height="21"/>
+                                <rect key="frame" x="27" y="272" width="131" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location goes here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95F-rk-VyY">
-                                <rect key="frame" x="170" y="180" width="141" height="21"/>
+                                <rect key="frame" x="170" y="224" width="141" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="purchase date goes here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8M-H7-1pG">
-                                <rect key="frame" x="167" y="140" width="190" height="21"/>
+                                <rect key="frame" x="167" y="184" width="190" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="item name goes here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccR-N4-sTt">
-                                <rect key="frame" x="167" y="98" width="161" height="21"/>
+                                <rect key="frame" x="167" y="142" width="161" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="expiration date goes here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szQ-bR-aQ2">
-                                <rect key="frame" x="170" y="228" width="194" height="21"/>
+                                <rect key="frame" x="170" y="272" width="194" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1yV-M4-q9X">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <items>
-                                    <navigationItem id="pgT-CX-9SZ">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="6f1-zI-cXo">
-                                            <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" identifier="showList" id="W2f-ua-QQ7"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="K5m-53-tR0"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KTx-RE-zTM" firstAttribute="baseline" secondItem="ccR-N4-sTt" secondAttribute="baseline" id="4mP-yO-EQK"/>
                             <constraint firstItem="B00-mB-B9N" firstAttribute="leading" secondItem="lw5-ar-ZDc" secondAttribute="leading" id="6FY-zQ-9Eu"/>
-                            <constraint firstItem="KTx-RE-zTM" firstAttribute="top" secondItem="1yV-M4-q9X" secondAttribute="bottom" constant="54" id="ALb-Hc-gGU"/>
                             <constraint firstItem="ky0-q4-7DK" firstAttribute="top" secondItem="KTx-RE-zTM" secondAttribute="bottom" constant="21" id="EQQ-gP-nDY"/>
                             <constraint firstItem="lw5-ar-ZDc" firstAttribute="baseline" secondItem="szQ-bR-aQ2" secondAttribute="baseline" id="ErL-Rg-MPj"/>
                             <constraint firstItem="szQ-bR-aQ2" firstAttribute="leading" secondItem="lw5-ar-ZDc" secondAttribute="trailing" constant="12" id="EtP-sc-wVG"/>
                             <constraint firstItem="ccR-N4-sTt" firstAttribute="leading" secondItem="a8M-H7-1pG" secondAttribute="leading" id="FSK-OS-lud"/>
                             <constraint firstItem="ky0-q4-7DK" firstAttribute="baseline" secondItem="a8M-H7-1pG" secondAttribute="baseline" id="H39-gr-oOa"/>
                             <constraint firstItem="95F-rk-VyY" firstAttribute="leading" secondItem="szQ-bR-aQ2" secondAttribute="leading" id="LKY-kn-hxp"/>
+                            <constraint firstItem="KTx-RE-zTM" firstAttribute="top" secondItem="t2g-Kg-mEA" secondAttribute="top" constant="78" id="MDy-JD-cTA"/>
                             <constraint firstItem="B00-mB-B9N" firstAttribute="top" secondItem="ky0-q4-7DK" secondAttribute="bottom" constant="19" id="PB6-eN-3Td"/>
                             <constraint firstItem="KTx-RE-zTM" firstAttribute="leading" secondItem="ky0-q4-7DK" secondAttribute="leading" id="Pt0-he-UaQ"/>
-                            <constraint firstItem="1yV-M4-q9X" firstAttribute="leading" secondItem="yZf-kN-5IH" secondAttribute="leading" id="Pzm-xW-En2"/>
                             <constraint firstItem="B00-mB-B9N" firstAttribute="baseline" secondItem="95F-rk-VyY" secondAttribute="baseline" id="UFN-B3-CMr"/>
-                            <constraint firstAttribute="trailing" secondItem="1yV-M4-q9X" secondAttribute="trailing" id="UcU-vx-LN4"/>
-                            <constraint firstItem="1yV-M4-q9X" firstAttribute="top" secondItem="t2g-Kg-mEA" secondAttribute="top" constant="-20" id="Ygc-nn-9hY"/>
                             <constraint firstItem="a8M-H7-1pG" firstAttribute="leading" secondItem="ky0-q4-7DK" secondAttribute="trailing" constant="15" id="a0B-zY-g8Q"/>
                             <constraint firstItem="lw5-ar-ZDc" firstAttribute="top" secondItem="B00-mB-B9N" secondAttribute="bottom" constant="27" id="cq1-0f-Kp9"/>
                             <constraint firstItem="ky0-q4-7DK" firstAttribute="leading" secondItem="B00-mB-B9N" secondAttribute="leading" id="yKG-KC-8Cp"/>
@@ -326,7 +311,4 @@
             <point key="canvasLocation" x="22" y="745"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="W2f-ua-QQ7"/>
-    </inferredMetricsTieBreakers>
 </document>

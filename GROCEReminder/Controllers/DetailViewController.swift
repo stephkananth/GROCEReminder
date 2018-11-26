@@ -62,7 +62,13 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
       super.viewDidLoad()
+      let button = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonPress))
+      self.navigationItem.rightBarButtonItem = button
       self.configureView()
+    }
+    
+    @objc func editButtonPress() {
+        
     }
     
     override func didReceiveMemoryWarning() {
