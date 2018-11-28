@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="384" height="86"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HUv-Bg-aJA" id="eLE-1q-a6x" customClass="TableViewCell" customModule="GROCEReminder" customModuleProvider="target">
-                <rect key="frame" x="0.0" y="0.0" width="384" height="85.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="384" height="86"/>
                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="background" translatesAutoresizingMaskIntoConstraints="NO" id="Z0K-6m-LsK">

@@ -78,7 +78,12 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
     configureView()
   }
   
+  override func viewWillDisappear(_ animated: Bool) {
+    self.navigationController?.setNavigationBarHidden(true, animated: false)
+  }
+  
   override func viewWillAppear(_ animated: Bool) {
+    self.navigationController?.setNavigationBarHidden(false, animated: false)
     // no lines where there aren't cells
     tableView.backgroundView = UIImageView(image: UIImage(named: "BackgroundFood.png"))
     tableView.tableFooterView = UIView(frame: CGRect.zero)
