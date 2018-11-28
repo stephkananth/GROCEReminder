@@ -14,6 +14,7 @@ class TableViewCell: UITableViewCell {
   
   @IBOutlet weak var name: UILabel!
   @IBOutlet weak var expirationDate: UILabel!
+  @IBOutlet var bgView: UIView!
   
   override func awakeFromNib() {
     super.awakeFromNib()
