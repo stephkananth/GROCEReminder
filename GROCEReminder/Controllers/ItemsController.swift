@@ -110,7 +110,9 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
         let result = try context.fetch(request)
         for data in result as! [NSManagedObject] {
           // if the item we are deleting is the same as this one in CoreData { }
-          context.delete(data)
+          if (self.items[indexPath.row].name == (data.value(forKey: "name") as! String) && self.items[indexPath.row].location == (data.value(forKey: "location") as! String) && self.items[indexPath.row].expirationDate == (data.value(forKey: "expiration_date") as! Date) && self.items[indexPath.row].purchaseDate == (data.value(forKey: "purchase_date") as! Date)) {
+            context.delete(data)
+          }
           try context.save()
         }
       } catch {
