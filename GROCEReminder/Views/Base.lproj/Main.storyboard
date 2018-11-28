@@ -10,6 +10,141 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Locations Controller-->
+        <scene sceneID="QRa-Do-lBL">
+            <objects>
+                <viewController id="nLQ-Ep-bDd" customClass="locationsController" customModule="GROCEReminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fHy-Wl-PL1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundFood" translatesAutoresizingMaskIntoConstraints="NO" id="YGv-Ag-bLS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GrocerReminder_title" translatesAutoresizingMaskIntoConstraints="NO" id="cXh-10-QsV">
+                                <rect key="frame" x="31" y="49" width="314" height="69"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUX-Ha-SKS">
+                                <rect key="frame" x="22" y="144" width="155" height="152"/>
+                                <state key="normal" image="category_fridge"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showFridge" id="baU-wT-Bcm"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_fridge" translatesAutoresizingMaskIntoConstraints="NO" id="A1I-uM-o1C">
+                                <rect key="frame" x="47" y="155" width="104" height="96"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHG-pY-6JS">
+                                <rect key="frame" x="198" y="145" width="155" height="151"/>
+                                <state key="normal" image="category_pantry"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showPantry" id="c4f-6S-Mcl"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_pantry" translatesAutoresizingMaskIntoConstraints="NO" id="HRS-gl-zic">
+                                <rect key="frame" x="223" y="155" width="104" height="96"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhE-bq-iV8">
+                                <rect key="frame" x="22" y="317" width="155" height="151"/>
+                                <state key="normal" image="category_freezer"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showFreezer" id="uPl-km-XSu"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_freezer" translatesAutoresizingMaskIntoConstraints="NO" id="L6D-sB-LJC">
+                                <rect key="frame" x="47" y="328" width="104" height="96"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hY4-Gr-m3T">
+                                <rect key="frame" x="198" y="317" width="155" height="151"/>
+                                <state key="normal" image="category_seasoning"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showSpice" id="p7Y-nv-eKt"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_seasoning" translatesAutoresizingMaskIntoConstraints="NO" id="Dkh-sx-iY0">
+                                <rect key="frame" x="223" y="328" width="104" height="96"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jz6-WG-4q7">
+                                <rect key="frame" x="22" y="491" width="154" height="152"/>
+                                <state key="normal" image="category_expired"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_expired" translatesAutoresizingMaskIntoConstraints="NO" id="fRk-co-ZDf">
+                                <rect key="frame" x="47" y="504" width="103" height="96"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qJ-Ip-Vja">
+                                <rect key="frame" x="197" y="492" width="156" height="151"/>
+                                <state key="normal" image="category_recipe"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_recipe" translatesAutoresizingMaskIntoConstraints="NO" id="9nh-Cm-Nlg">
+                                <rect key="frame" x="222" y="504" width="105" height="96"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fRk-co-ZDf" firstAttribute="leading" secondItem="cNN-AR-iVh" secondAttribute="leading" constant="47" id="1XL-0T-LRl"/>
+                            <constraint firstItem="hY4-Gr-m3T" firstAttribute="top" secondItem="hHG-pY-6JS" secondAttribute="bottom" constant="21" id="1wa-Gz-Lxa"/>
+                            <constraint firstItem="jhE-bq-iV8" firstAttribute="top" secondItem="zUX-Ha-SKS" secondAttribute="bottom" constant="21" id="20t-Wu-tE5"/>
+                            <constraint firstItem="zUX-Ha-SKS" firstAttribute="top" secondItem="cXh-10-QsV" secondAttribute="bottom" constant="26" id="3Vr-iT-QT3"/>
+                            <constraint firstItem="L6D-sB-LJC" firstAttribute="leading" secondItem="cNN-AR-iVh" secondAttribute="leading" constant="47" id="46L-KL-8iM"/>
+                            <constraint firstItem="cNN-AR-iVh" firstAttribute="trailing" secondItem="Dkh-sx-iY0" secondAttribute="trailing" constant="48" id="5aY-FS-np8"/>
+                            <constraint firstItem="YGv-Ag-bLS" firstAttribute="leading" secondItem="cNN-AR-iVh" secondAttribute="leading" id="5qR-mg-MEz"/>
+                            <constraint firstItem="7qJ-Ip-Vja" firstAttribute="top" secondItem="Dkh-sx-iY0" secondAttribute="bottom" constant="68" id="6Tr-cU-GXB"/>
+                            <constraint firstItem="cXh-10-QsV" firstAttribute="top" secondItem="cNN-AR-iVh" secondAttribute="top" constant="5" id="7H8-Ba-gdv"/>
+                            <constraint firstItem="cNN-AR-iVh" firstAttribute="bottom" secondItem="Jz6-WG-4q7" secondAttribute="bottom" constant="135" id="97V-3e-l5V"/>
+                            <constraint firstItem="cNN-AR-iVh" firstAttribute="trailing" secondItem="9nh-Cm-Nlg" secondAttribute="trailing" constant="48" id="AYi-hx-JCq"/>
+                            <constraint firstItem="zUX-Ha-SKS" firstAttribute="leading" secondItem="cNN-AR-iVh" secondAttribute="leading" constant="22" id="Avu-dI-2Uj"/>
+                            <constraint firstItem="7qJ-Ip-Vja" firstAttribute="top" secondItem="hY4-Gr-m3T" secondAttribute="bottom" constant="24" id="BAr-sX-pkC"/>
+                            <constraint firstItem="fRk-co-ZDf" firstAttribute="top" secondItem="jhE-bq-iV8" secondAttribute="bottom" constant="36" id="Bj7-ZC-cU3"/>
+                            <constraint firstItem="cNN-AR-iVh" firstAttribute="bottom" secondItem="fRk-co-ZDf" secondAttribute="bottom" constant="178" id="C0C-AN-Vu5"/>
+                            <constraint firstItem="Jz6-WG-4q7" firstAttribute="leading" secondItem="cNN-AR-iVh" secondAttribute="leading" constant="22" id="C2B-ic-6fd"/>
+                            <constraint firstItem="Jz6-WG-4q7" firstAttribute="top" secondItem="L6D-sB-LJC" secondAttribute="bottom" constant="67" id="CaR-M3-IHK"/>
+                            <constraint firstItem="7qJ-Ip-Vja" firstAttribute="leading" secondItem="Jz6-WG-4q7" secondAttribute="trailing" constant="21" id="DAw-8n-af2"/>
+                            <constraint firstItem="jhE-bq-iV8" firstAttribute="top" secondItem="A1I-uM-o1C" secondAttribute="bottom" constant="66" id="DHW-cP-Ps5"/>
+                            <constraint firstItem="L6D-sB-LJC" firstAttribute="top" secondItem="zUX-Ha-SKS" secondAttribute="bottom" constant="32" id="HM9-kj-crw"/>
+                            <constraint firstItem="A1I-uM-o1C" firstAttribute="top" secondItem="cXh-10-QsV" secondAttribute="bottom" constant="37" id="KEm-Yf-XGV"/>
+                            <constraint firstItem="cNN-AR-iVh" firstAttribute="bottom" secondItem="9nh-Cm-Nlg" secondAttribute="bottom" constant="178" id="O8D-oF-ToT"/>
+                            <constraint firstItem="Jz6-WG-4q7" firstAttribute="top" secondItem="jhE-bq-iV8" secondAttribute="bottom" constant="23" id="ONZ-Dm-JUA"/>
+                            <constraint firstItem="9nh-Cm-Nlg" firstAttribute="top" secondItem="hY4-Gr-m3T" secondAttribute="bottom" constant="36" id="PCb-d4-W9p"/>
+                            <constraint firstItem="cNN-AR-iVh" firstAttribute="trailing" secondItem="hY4-Gr-m3T" secondAttribute="trailing" constant="22" id="Pvk-le-5uz"/>
+                            <constraint firstItem="hY4-Gr-m3T" firstAttribute="leading" secondItem="L6D-sB-LJC" secondAttribute="trailing" constant="47" id="QEQ-wF-ABS"/>
+                            <constraint firstItem="jhE-bq-iV8" firstAttribute="leading" secondItem="cNN-AR-iVh" secondAttribute="leading" constant="22" id="UH7-sa-bow"/>
+                            <constraint firstAttribute="bottom" secondItem="YGv-Ag-bLS" secondAttribute="bottom" id="XeY-hu-kLB"/>
+                            <constraint firstItem="cNN-AR-iVh" firstAttribute="bottom" secondItem="7qJ-Ip-Vja" secondAttribute="bottom" constant="135" id="cVb-pF-btx"/>
+                            <constraint firstItem="cNN-AR-iVh" firstAttribute="trailing" secondItem="7qJ-Ip-Vja" secondAttribute="trailing" constant="22" id="dMf-ip-BNq"/>
+                            <constraint firstItem="YGv-Ag-bLS" firstAttribute="top" secondItem="fHy-Wl-PL1" secondAttribute="top" id="eS3-sN-eiz"/>
+                            <constraint firstItem="cNN-AR-iVh" firstAttribute="trailing" secondItem="cXh-10-QsV" secondAttribute="trailing" constant="30" id="fBY-9D-mRo"/>
+                            <constraint firstItem="cNN-AR-iVh" firstAttribute="trailing" secondItem="HRS-gl-zic" secondAttribute="trailing" constant="48" id="fO5-Pa-w3e"/>
+                            <constraint firstItem="9nh-Cm-Nlg" firstAttribute="leading" secondItem="Jz6-WG-4q7" secondAttribute="trailing" constant="46" id="h1X-Hp-Vft"/>
+                            <constraint firstItem="hY4-Gr-m3T" firstAttribute="leading" secondItem="jhE-bq-iV8" secondAttribute="trailing" constant="21" id="kdq-Qz-fCe"/>
+                            <constraint firstItem="cXh-10-QsV" firstAttribute="leading" secondItem="cNN-AR-iVh" secondAttribute="leading" constant="31" id="o4b-pQ-Ioe"/>
+                            <constraint firstItem="Dkh-sx-iY0" firstAttribute="leading" secondItem="jhE-bq-iV8" secondAttribute="trailing" constant="46" id="oOn-Ou-CzM"/>
+                            <constraint firstItem="A1I-uM-o1C" firstAttribute="leading" secondItem="cNN-AR-iVh" secondAttribute="leading" constant="47" id="otd-hT-BOj"/>
+                            <constraint firstItem="Dkh-sx-iY0" firstAttribute="top" secondItem="hHG-pY-6JS" secondAttribute="bottom" constant="32" id="p5Q-Qf-6w7"/>
+                            <constraint firstItem="hHG-pY-6JS" firstAttribute="leading" secondItem="zUX-Ha-SKS" secondAttribute="trailing" constant="21" id="ro2-wP-frf"/>
+                            <constraint firstItem="7qJ-Ip-Vja" firstAttribute="leading" secondItem="fRk-co-ZDf" secondAttribute="trailing" constant="47" id="t12-G6-0nX"/>
+                            <constraint firstItem="hHG-pY-6JS" firstAttribute="leading" secondItem="A1I-uM-o1C" secondAttribute="trailing" constant="47" id="t6F-LV-ANc"/>
+                            <constraint firstItem="hHG-pY-6JS" firstAttribute="top" secondItem="cXh-10-QsV" secondAttribute="bottom" constant="27" id="tcc-Du-rdh"/>
+                            <constraint firstItem="cNN-AR-iVh" firstAttribute="trailing" secondItem="hHG-pY-6JS" secondAttribute="trailing" constant="22" id="ueP-mf-iFj"/>
+                            <constraint firstItem="HRS-gl-zic" firstAttribute="top" secondItem="cXh-10-QsV" secondAttribute="bottom" constant="37" id="vxj-Gc-lqJ"/>
+                            <constraint firstItem="YGv-Ag-bLS" firstAttribute="trailing" secondItem="cNN-AR-iVh" secondAttribute="trailing" id="xcH-Ht-mjb"/>
+                            <constraint firstItem="HRS-gl-zic" firstAttribute="leading" secondItem="zUX-Ha-SKS" secondAttribute="trailing" constant="46" id="y6v-7Q-epp"/>
+                            <constraint firstItem="hY4-Gr-m3T" firstAttribute="top" secondItem="HRS-gl-zic" secondAttribute="bottom" constant="66" id="yBX-zq-Tya"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cNN-AR-iVh"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="llH-bX-8vb"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="freezerButton" destination="jhE-bq-iV8" id="ocv-Nf-RVz"/>
+                        <outlet property="fridgeButton" destination="zUX-Ha-SKS" id="tha-t5-93M"/>
+                        <outlet property="pantryButton" destination="hHG-pY-6JS" id="YsU-vO-QgM"/>
+                        <outlet property="spiceButton" destination="hY4-Gr-m3T" id="vRc-AS-8RE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hz3-jV-LwY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1646" y="-27"/>
+        </scene>
         <!--Refrigerator-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -165,12 +300,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dOB-Dt-MdP"/>
+                        <segue destination="nLQ-Ep-bDd" kind="relationship" relationship="rootViewController" id="QH1-lg-29X"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YJK-3k-8FU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1674" y="-27"/>
+            <point key="canvasLocation" x="-2462" y="-27"/>
         </scene>
         <!--Add Item-->
         <scene sceneID="nMv-cc-fqY">
@@ -318,5 +453,21 @@
     </scenes>
     <resources>
         <image name="BackgroundFood" width="414" height="736"/>
+        <image name="GrocerReminder_title" width="371" height="69"/>
+        <image name="category_expired" width="155" height="152"/>
+        <image name="category_freezer" width="155" height="151"/>
+        <image name="category_fridge" width="155" height="152"/>
+        <image name="category_pantry" width="155" height="151"/>
+        <image name="category_recipe" width="155" height="151"/>
+        <image name="category_seasoning" width="155" height="151"/>
+        <image name="icon_expired" width="74.333335876464844" height="90.666664123535156"/>
+        <image name="icon_freezer" width="81" height="90.666664123535156"/>
+        <image name="icon_fridge" width="56.666667938232422" height="85"/>
+        <image name="icon_pantry" width="90.666664123535156" height="90.666664123535156"/>
+        <image name="icon_recipe" width="105.33333587646484" height="75.666664123535156"/>
+        <image name="icon_seasoning" width="67.666664123535156" height="90.666664123535156"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="uPl-km-XSu"/>
+    </inferredMetricsTieBreakers>
 </document>

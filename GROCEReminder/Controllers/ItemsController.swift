@@ -16,6 +16,48 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
   let viewModel = ItemsViewModel()
   let test = "Test"
   
+  // MARK: - Configure View
+  var detailItem: String? {
+    didSet {
+      // Update the view.
+      self.configureView()
+    }
+  }
+  
+  func configureView() {
+    // Update the user interface for the detail item.
+    if let detail: String = self.detailItem {
+      if (detail == "fridge") {
+        self.title = "Refrigerator"
+      } else if (detail == "pantry") {
+        self.title = "Pantry"
+      } else if (detail == "freezer") {
+        self.title = "Freezer"
+      } else if (detail == "spice") {
+        self.title = "Spice Rack"
+      }
+      selectLocation(loc: detail)
+    }
+  }
+  
+  func selectLocation(loc: String) {
+    // Again set up the stack to interface with CoreData
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let context = appDelegate.persistentContainer.viewContext
+    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Food")
+    request.returnsObjectsAsFaults = false
+    request.predicate = NSPredicate(format: "location == %@", loc)
+    do {
+      let result = try context.fetch(request)
+      for data in result as! [NSManagedObject] {
+        self.loadItems(data: data)
+        print(data.value(forKey: "name") as! String)
+      }
+    } catch {
+      print("Failed")
+    }
+  }
+  
   func loadItems(data: NSManagedObject){
     let name = data.value(forKey: "name") as! String
     let expirationDate = (data.value(forKey: "expiration_date") as! Date)
@@ -30,26 +72,10 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
     super.viewDidLoad()
     
     self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-    
     let cellNib = UINib(nibName: "TableViewCell", bundle: nil)
     tableView.register(cellNib, forCellReuseIdentifier: "cell")
-    //    cellNib.name?.text = viewModel.nameForRowAtIndexPath(indexPath)
-    //    cellNib.expiration_date?.text = viewModel.dateForRowAtIndexPath(indexPath)
     
-    // Again set up the stack to interface with CoreData
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    let context = appDelegate.persistentContainer.viewContext
-    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Food")
-    request.returnsObjectsAsFaults = false
-    do {
-      let result = try context.fetch(request)
-      for data in result as! [NSManagedObject] {
-        self.loadItems(data: data)
-        print(data.value(forKey: "name") as! String)
-      }
-    } catch {
-      print("Failed")
-    }
+    configureView()
   }
   
   override func viewWillAppear(_ animated: Bool) {
