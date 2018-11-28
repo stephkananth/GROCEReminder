@@ -24,7 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		850AD1682195E99A00FA1078 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = GROCEReminder/Controllers/TableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		850AD1682195E99A00FA1078 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = GROCEReminder/Controllers/TableViewCell.swift; sourceTree = SOURCE_ROOT; tabWidth = 2; };
 		850AD16A2195E9E800FA1078 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		851F2F9F218F8A9000E7B7CD /* GROCEReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GROCEReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		851F2FA2218F8A9000E7B7CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
