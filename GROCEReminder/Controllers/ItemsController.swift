@@ -75,7 +75,7 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
     let cellNib = UINib(nibName: "TableViewCell", bundle: nil)
     tableView.register(cellNib, forCellReuseIdentifier: "cell")
     
-    configureView()
+//    configureView()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
