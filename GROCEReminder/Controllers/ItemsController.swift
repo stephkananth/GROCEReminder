@@ -16,6 +16,48 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
   let viewModel = ItemsViewModel()
   let test = "Test"
   
+  // MARK: - Configure View
+  var detailItem: String? {
+    didSet {
+      // Update the view.
+      self.configureView()
+    }
+  }
+  
+  func configureView() {
+    // Update the user interface for the detail item.
+    if let detail: String = self.detailItem {
+      if (detail == "fridge") {
+        self.title = "Refrigerator"
+      } else if (detail == "pantry") {
+        self.title = "Pantry"
+      } else if (detail == "freezer") {
+        self.title = "Freezer"
+      } else if (detail == "spice") {
+        self.title = "Spice Rack"
+      }
+      selectLocation(loc: detail)
+    }
+  }
+  
+  func selectLocation(loc: String) {
+    // Again set up the stack to interface with CoreData
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let context = appDelegate.persistentContainer.viewContext
+    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Food")
+    request.returnsObjectsAsFaults = false
+    request.predicate = NSPredicate(format: "location == %@", loc)
+    do {
+      let result = try context.fetch(request)
+      for data in result as! [NSManagedObject] {
+        self.loadItems(data: data)
+        print(data.value(forKey: "name") as! String)
+      }
+    } catch {
+      print("Failed")
+    }
+  }
+  
   func loadItems(data: NSManagedObject){
     let name = data.value(forKey: "name") as! String
     let expirationDate = (data.value(forKey: "expiration_date") as! Date)
@@ -29,32 +71,22 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
     let cellNib = UINib(nibName: "TableViewCell", bundle: nil)
     tableView.register(cellNib, forCellReuseIdentifier: "cell")
-    //    cellNib.name?.text = viewModel.nameForRowAtIndexPath(indexPath)
-    //    cellNib.expiration_date?.text = viewModel.dateForRowAtIndexPath(indexPath)
     
-    
-    // Again set up the stack to interface with CoreData
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    let context = appDelegate.persistentContainer.viewContext
-    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Food")
-    request.returnsObjectsAsFaults = false
-    do {
-      let result = try context.fetch(request)
-      for data in result as! [NSManagedObject] {
-        self.loadItems(data: data)
-        print(data.value(forKey: "name") as! String)
-      }
-    } catch {
-      print("Failed")
-    }
-    
-//    print(items.map({ $0.name }))
-    
-    //    self.navigationItem.leftBarButtonItem = self.editButtonItem
-//    dataManager.loadItems()
-//    items = dataManager.items
+//    configureView()
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    self.navigationController?.setNavigationBarHidden(true, animated: false)
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    self.navigationController?.setNavigationBarHidden(false, animated: false)
+    // no lines where there aren't cells
+    tableView.backgroundView = UIImageView(image: UIImage(named: "BackgroundFood.png"))
+    tableView.tableFooterView = UIView(frame: CGRect.zero)
   }
   
   override func didReceiveMemoryWarning() {
@@ -86,13 +118,40 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
     return items.count
   }
   
+  override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    let cell = cell as! TableViewCell
+    cell.backgroundColor = .clear
+    
+    // select the UIView behind the information
+    let listItem = cell.bgView
+    
+    // round the corners
+    listItem?.layer.cornerRadius = 15
+    
+    listItem?.layer.masksToBounds = true
+    
+    // blur the background of the UIView
+    let blurEffect = UIBlurEffect(style: .dark)
+    let blurEffectView = UIVisualEffectView(effect: blurEffect)
+    blurEffectView.frame = (listItem?.bounds)!
+    listItem?.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
+  }
+  
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath) as! TableViewCell
     
     let item = items[indexPath.row]
     cell.name!.text = item.name
     cell.expirationDate.text = item.expirationDate.toString(dateFormat: "MM/dd/YY")
+    
+//    cell.bgView.layer.cornerRadius = 5
+//    cell.bgView.layer.masksToBounds = true
+    
     return cell
+  }
+  
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 80
   }
   
   override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
