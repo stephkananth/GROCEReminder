@@ -23,18 +23,27 @@ protocol AddItemControllerDelegate: class {
 class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
   
   // MARK: - Outlets
+  
+  // Fields
   @IBOutlet weak var nameField: UITextField!
   @IBOutlet weak var expirationDateField: UITextField!
-  @IBOutlet weak var locationField: UITextField!
   @IBOutlet weak var shelfLifeAmtLabel: UILabel!
   @IBOutlet weak var shelfLifeMetricLabel: UILabel!
   @IBOutlet weak var purchaseDateField: UITextField!
   @IBOutlet weak var doneBarButton: UIBarButtonItem!
   @IBOutlet weak var shelfLifeButton: UIButton!
   @IBOutlet weak var shelfLife: UIPickerView?
-    
+  
+  // Locations
+  @IBOutlet weak var spiceRack: UIButton!
+  @IBOutlet weak var pantry: UIButton!
+  @IBOutlet weak var freezer: UIButton!
+  @IBOutlet weak var fridge: UIButton!
+  
+  private var location: String?
+  
+  // Pickers
   var pickerData: [[String]] = [[String]]()
-    
   private var expPicker: UIDatePicker?
   private var datePicker: UIDatePicker?
   private var expiration: Date?
@@ -73,15 +82,9 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     pickerData = [amountData, metricData]
     
     // Connect data:
-//    shelfLifeMetric = UIPickerView()
-//    shelfLifeMetric?.delegate = self
-//    shelfLifeMetric?.dataSource = self
     shelfLife?.isHidden = true
     shelfLife?.delegate = self
     shelfLife?.dataSource = self
-    
-//    shelfLifeMetricLabel.inputView = shelfLifeMetric
-//    shelfLifeAmtLabel.inputView = shelfLifeAmt
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -118,7 +121,7 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
   
   @IBAction func done() {
     let name:String = nameField.text!
-    let location:String = locationField.text!
+    let location:String = self.location!
     let purchase_date:Date = date!
     let expiration_date:Date = expiration!
     let item = Item(name: name, location: location, purchase_date: purchase_date, expiration_date: expiration_date)
@@ -129,6 +132,41 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     
   @IBAction func shelfLifeButtonPress() {
     shelfLife?.isHidden = !(shelfLife?.isHidden)!
+    view.endEditing(true)
+  }
+  
+  @IBAction func locationButtonClick(_ sender: UIButton) {
+    switch sender.tag
+    {
+      case 1:
+        location = "freezer"
+        freezer.setImage( UIImage (named: "icon_freezer_select"), for: .normal)
+        fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
+        spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
+        pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
+        break
+      case 2:
+        location = "pantry"
+        pantry.setImage( UIImage (named: "icon_pantry_select"), for: .normal)
+        fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
+        spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
+        freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
+        break
+      case 3:
+        location = "spice"
+        spiceRack.setImage( UIImage (named: "icon_seasoning_select"), for: .normal)
+        freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
+        fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
+        pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
+        break
+      default:
+        location = "fridge"
+        fridge.setImage( UIImage (named: "icon_fridge_select"), for: .normal)
+        spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
+        freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
+        pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
+        break
+    }
   }
   
   func saveItem(item: Item) {
