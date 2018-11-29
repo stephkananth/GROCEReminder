@@ -97,6 +97,7 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showDetail" {
+      self.navigationController?.setNavigationBarHidden(false, animated: false)
       if let indexPath = self.tableView.indexPathForSelectedRow {
         let item = items[indexPath.row]
         (segue.destination as! DetailViewController).detailItem = item
@@ -127,11 +128,11 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
     
     // round the corners
     listItem?.layer.cornerRadius = 15
-    
     listItem?.layer.masksToBounds = true
     
     // blur the background of the UIView
-    let blurEffect = UIBlurEffect(style: .dark)
+    listItem?.backgroundColor = .clear
+    let blurEffect = UIBlurEffect(style: .light)
     let blurEffectView = UIVisualEffectView(effect: blurEffect)
     blurEffectView.frame = (listItem?.bounds)!
     listItem?.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
