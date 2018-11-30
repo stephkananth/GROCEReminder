@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import CoreData
 
-class Item: NSObject, NSCoding {
+class Item {
   
   // MARK: - Properties
   var expirationDate: Date
@@ -24,33 +23,6 @@ class Item: NSObject, NSCoding {
     self.location = location
     self.purchaseDate = purchase_date
     self.expirationDate = expiration_date
-    super.init()
   }
   
-  // MARK: - Encoding
-  
-  // marking 'required' in case of subclassing, this init will be
-  // required of the subclass (not really an issue here b/c not
-  // subclassing; more for pedagogical purposes at this point)
-  required init(coder aDecoder: NSCoder) {
-    self.expirationDate = aDecoder.decodeObject(forKey: "expiration_date") as! Date
-    self.location = aDecoder.decodeObject(forKey: "location") as! String
-    self.name = aDecoder.decodeObject(forKey: "name") as! String
-    self.purchaseDate = aDecoder.decodeObject(forKey: "purchase_date") as! Date
-    super.init()
-  }
-  
-  func encode(with aCoder: NSCoder) {
-    aCoder.encode(expirationDate, forKey: "expiration_date")
-    aCoder.encode(location, forKey: "location")
-    aCoder.encode(name, forKey: "name")
-    aCoder.encode(purchaseDate, forKey: "purchase_date")
-  }
-  
-  func encodeWithCoder(aCoder: NSCoder) {
-    aCoder.encode(expirationDate, forKey: "expiration_date")
-    aCoder.encode(location, forKey: "location")
-    aCoder.encode(name, forKey: "name")
-    aCoder.encode(purchaseDate, forKey: "purchase_date")
-  }
 }

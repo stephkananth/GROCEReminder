@@ -13,7 +13,6 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
   // MARK: - Properties
   var items = [Item]()
   
-  let viewModel = ItemsViewModel()
   let test = "Test"
   
   // MARK: - Configure View

@@ -36,7 +36,7 @@ let categories = [
   25: "Deli & Prepared Foods"
 ]
 
-struct ShelfItem {
+public struct ShelfItem {
   var name: String
   var category: String
   var pantry_length: Int
@@ -45,6 +45,7 @@ struct ShelfItem {
   var fridge_metric: String
   var freeze_length: Int
   var freeze_metric: String
+  var location: String
   
   init(name: String, category_num: Int, pantry_length: Int, pantry_metric: String, fridge_length: Int, fridge_metric: String, freeze_length: Int, freeze_metric: String) {
     self.name = name
@@ -55,5 +56,17 @@ struct ShelfItem {
     self.fridge_metric = fridge_metric
     self.freeze_length = freeze_length
     self.freeze_metric = freeze_metric
+    
+    switch (self.pantry_length, self.freeze_length, self.fridge_length) {
+    case (_, -1, -1):
+      self.location = "pantry"
+    case (-1, _, -1):
+      self.location = "freezer"
+    case (-1, -1, _):
+      self.location = "fridge"
+    case (_, _, _):
+      self.location = ""
+    }
   }
+  
 }

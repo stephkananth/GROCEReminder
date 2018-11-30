@@ -53,27 +53,65 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
   weak var delegate: AddItemControllerDelegate?
   
   var detailItem: String?
+  var dateHelper = DateHelper()
+  var viewModel: ItemDetailViewModel?
   
   func configureView() {
     // Update the user interface for the detail item.
     if let detail: String = self.detailItem {
-      if (detail == "fridge") {
-        self.title = "Refrigerator"
-      } else if (detail == "pantry") {
-        self.title = "Pantry"
-      } else if (detail == "freezer") {
-        self.title = "Freezer"
-      } else if (detail == "spice") {
-        self.title = "Spice Rack"
-      }
       selectLocation(loc: detail)
     }
+    if let vm = self.viewModel {
+      let si = vm.shelfItem
+      nameField.text = si.name
+      setMetrics(si:si)
+      expiration = dateHelper.expDate( item: si, date: date )
+      expirationDateField.text = dateFormatter.string(from: expiration!)
+      print(expirationDateField.text!)
+      selectLocation(loc: si.location)
+    }
+  }
+  
+  func setMetrics(si:ShelfItem) {
+    var row1: Int
+    var row2: Int
+    switch (si.pantry_length, si.freeze_length, si.fridge_length) {
+      case (_, -1, -1):
+        shelfLifeMetricLabel.text = si.pantry_metric
+        shelfLifeAmtLabel.text = String(si.pantry_length)
+        row1 = si.pantry_length
+      case (-1, _, -1):
+        shelfLifeMetricLabel.text = si.freeze_metric
+        shelfLifeAmtLabel.text = String(si.freeze_length)
+        row1 = si.freeze_length
+      case (-1, -1, _):
+        shelfLifeMetricLabel.text = si.fridge_metric
+        shelfLifeAmtLabel.text = String(si.fridge_length)
+        row1 = si.fridge_length
+      case (_, _, _):
+        row1 = 0
+    }
+    switch shelfLifeMetricLabel.text! {
+      case "Days":
+        row2 = 0
+      case "weeks":
+        row2 = 1
+      case "Months":
+        row2 = 2
+      case "Years":
+        row2 = 3
+      default:
+        row2 = 0
+    }
+    shelfLife!.selectRow(row1, inComponent: 0, animated: true)
+    shelfLife!.selectRow(row2, inComponent: 0, animated: true)
   }
   
   func selectLocation(loc: String) {
     switch loc
     {
       case "freezer":
+        self.title = "Freezer"
         location = "freezer"
         freezer.setImage( UIImage (named: "icon_freezer_select"), for: .normal)
         fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
@@ -81,6 +119,7 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
         pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
         break
       case "pantry":
+        self.title = "Pantry"
         location = "pantry"
         pantry.setImage( UIImage (named: "icon_pantry_select"), for: .normal)
         fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
@@ -88,6 +127,7 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
         freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
         break
       case "spice":
+        self.title = "Spice Rack"
         location = "spice"
         spiceRack.setImage( UIImage (named: "icon_seasoning_select"), for: .normal)
         freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
@@ -95,6 +135,7 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
         pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
         break
       default:
+        self.title = "Refrigerator"
         location = "fridge"
         fridge.setImage( UIImage (named: "icon_fridge_select"), for: .normal)
         spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
@@ -116,6 +157,10 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     
     configurePickers()
     self.configureView()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    self.navigationController?.setNavigationBarHidden(false, animated: false)
   }
     
   func configurePickers() {

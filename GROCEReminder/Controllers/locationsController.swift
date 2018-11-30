@@ -24,6 +24,10 @@ class locationsController: UIViewController {
     self.navigationController?.setNavigationBarHidden(true, animated: false)
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    self.tabBarController?.tabBar.isHidden = false
+  }
+  
   // MARK: - Segues
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     // show top bar and hide bottom bar
@@ -33,22 +37,27 @@ class locationsController: UIViewController {
 //      let navigationController = segue.destination as! UINavigationController
 //      let controller = navigationController.topViewController as! AddItemController
 //      controller.hidesBottomBarWhenPushed = true
+      let controller = (segue.destination as! ItemsSearch)
+      controller.hidesBottomBarWhenPushed = true
     }
-    else {
+    else if segue.identifier == "showFridge" {
       let controller = (segue.destination as! ItemsController)
-      // set location for list
-      if segue.identifier == "showFridge" {
-          controller.detailItem = "fridge"
-      }
-      else if segue.identifier == "showPantry" {
-        controller.detailItem = "pantry"
-      }
-      else if segue.identifier == "showFreezer" {
-        controller.detailItem = "freezer"
-      }
-      else if segue.identifier == "showSpice" {
-        controller.detailItem = "spice"
-      }
+      controller.detailItem = "fridge"
+      controller.hidesBottomBarWhenPushed = true
+    }
+    else if segue.identifier == "showPantry" {
+      let controller = (segue.destination as! ItemsController)
+      controller.detailItem = "pantry"
+      controller.hidesBottomBarWhenPushed = true
+    }
+    else if segue.identifier == "showFreezer" {
+      let controller = (segue.destination as! ItemsController)
+      controller.detailItem = "freezer"
+      controller.hidesBottomBarWhenPushed = true
+    }
+    else if segue.identifier == "showSpice" {
+      let controller = (segue.destination as! ItemsController)
+      controller.detailItem = "spice"
       controller.hidesBottomBarWhenPushed = true
     }
   }
