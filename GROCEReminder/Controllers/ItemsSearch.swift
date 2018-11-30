@@ -105,7 +105,10 @@ class ItemsSearch: UIViewController, UITableViewDataSource, UITableViewDelegate,
   func addItemController(controller: AddItemController, didFinishAddingItem item: Item) {
     dismiss(animated: true, completion: nil)
     let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "locationView") as UIViewController
-    present(viewController, animated: true, completion: nil)
+    let navController = UINavigationController(rootViewController: viewController)
+    viewController.hidesBottomBarWhenPushed = false
+    self.present(navController, animated:true, completion: nil)
+//    present(viewController, animated: true, completion: nil)
   }
   
 }

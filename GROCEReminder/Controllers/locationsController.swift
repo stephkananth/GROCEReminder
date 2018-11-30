@@ -25,7 +25,8 @@ class locationsController: UIViewController {
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    self.tabBarController?.tabBar.isHidden = false
+    navigationController?.setToolbarHidden(false, animated: false)
+    self.navigationController?.toolbar.barTintColor = UIColor.black.withAlphaComponent(0.5)
   }
   
   // MARK: - Segues
@@ -34,9 +35,6 @@ class locationsController: UIViewController {
     self.navigationController?.setNavigationBarHidden(false, animated: false)
     
     if segue.identifier == "newItem" {
-//      let navigationController = segue.destination as! UINavigationController
-//      let controller = navigationController.topViewController as! AddItemController
-//      controller.hidesBottomBarWhenPushed = true
       let controller = (segue.destination as! ItemsSearch)
       controller.hidesBottomBarWhenPushed = true
     }
