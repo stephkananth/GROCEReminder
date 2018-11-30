@@ -13,7 +13,6 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
   // MARK: - Properties
   var items = [Item]()
   
-  let viewModel = ItemsViewModel()
   let test = "Test"
   
   // MARK: - Configure View
@@ -105,6 +104,7 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
     } else if segue.identifier == "addItem" {
       let navigationController = segue.destination as! UINavigationController
       let controller = navigationController.topViewController as! AddItemController
+      controller.detailItem = self.title!
       controller.delegate = self
     }
   }

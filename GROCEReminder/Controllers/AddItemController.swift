@@ -41,23 +41,126 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
   @IBOutlet weak var fridge: UIButton!
   
   private var location: String?
+  let dateFormatter = DateFormatter()
   
   // Pickers
   var pickerData: [[String]] = [[String]]()
   private var expPicker: UIDatePicker?
   private var datePicker: UIDatePicker?
   private var expiration: Date?
-  private var date: Date?
+  private var date: Date!
 
   weak var delegate: AddItemControllerDelegate?
   
+  var detailItem: String?
+  var dateHelper = DateHelper()
+  var viewModel: ItemDetailViewModel?
+  
+  func configureView() {
+    // Update the user interface for the detail item.
+    if let detail: String = self.detailItem {
+      selectLocation(loc: detail)
+    }
+    if let vm = self.viewModel {
+      let si = vm.shelfItem
+      nameField.text = si.name
+      setMetrics(si:si)
+      expiration = dateHelper.expDate( item: si, date: date )
+      expirationDateField.text = dateFormatter.string(from: expiration!)
+      print(expirationDateField.text!)
+      selectLocation(loc: si.location)
+    }
+  }
+  
+  func setMetrics(si:ShelfItem) {
+    var row1: Int
+    var row2: Int
+    switch (si.pantry_length, si.freeze_length, si.fridge_length) {
+      case (_, -1, -1):
+        shelfLifeMetricLabel.text = si.pantry_metric
+        shelfLifeAmtLabel.text = String(si.pantry_length)
+        row1 = si.pantry_length
+      case (-1, _, -1):
+        shelfLifeMetricLabel.text = si.freeze_metric
+        shelfLifeAmtLabel.text = String(si.freeze_length)
+        row1 = si.freeze_length
+      case (-1, -1, _):
+        shelfLifeMetricLabel.text = si.fridge_metric
+        shelfLifeAmtLabel.text = String(si.fridge_length)
+        row1 = si.fridge_length
+      case (_, _, _):
+        row1 = 0
+    }
+    switch shelfLifeMetricLabel.text! {
+      case "Days":
+        row2 = 0
+      case "weeks":
+        row2 = 1
+      case "Months":
+        row2 = 2
+      case "Years":
+        row2 = 3
+      default:
+        row2 = 0
+    }
+    shelfLife!.selectRow(row1, inComponent: 0, animated: true)
+    shelfLife!.selectRow(row2, inComponent: 0, animated: true)
+  }
+  
+  func selectLocation(loc: String) {
+    switch loc
+    {
+      case "freezer":
+        self.title = "Freezer"
+        location = "freezer"
+        freezer.setImage( UIImage (named: "icon_freezer_select"), for: .normal)
+        fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
+        spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
+        pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
+        break
+      case "pantry":
+        self.title = "Pantry"
+        location = "pantry"
+        pantry.setImage( UIImage (named: "icon_pantry_select"), for: .normal)
+        fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
+        spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
+        freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
+        break
+      case "spice":
+        self.title = "Spice Rack"
+        location = "spice"
+        spiceRack.setImage( UIImage (named: "icon_seasoning_select"), for: .normal)
+        freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
+        fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
+        pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
+        break
+      default:
+        self.title = "Refrigerator"
+        location = "fridge"
+        fridge.setImage( UIImage (named: "icon_fridge_select"), for: .normal)
+        spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
+        freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
+        pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
+        break
+    }
+  }
   
   // MARK: - General
   override func viewDidLoad() {
     super.viewDidLoad()
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(AddItemController.viewTapped(gestureRecognizer:)) )
     view.addGestureRecognizer(tapGesture)
+    
+    dateFormatter.dateFormat = "MM/dd/yy"
+    date = Date()
+    purchaseDateField.text = dateFormatter.string(from: date)
+    
     configurePickers()
+    self.configureView()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    self.navigationController?.setNavigationBarHidden(false, animated: false)
   }
     
   func configurePickers() {
@@ -95,17 +198,11 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
   
   // MARK: - Handlers
   @objc func expChanged(datePicker: UIDatePicker) {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "MM/dd/yy"
     expirationDateField.text = dateFormatter.string(from: datePicker.date)
-//    view.endEditing(true)
   }
   
   @objc func dateChanged(datePicker: UIDatePicker) {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "MM/dd/yy"
     purchaseDateField.text = dateFormatter.string(from: datePicker.date)
-//    view.endEditing(true)
   }
   
   @objc func viewTapped(gestureRecognizer: UIGestureRecognizer) {

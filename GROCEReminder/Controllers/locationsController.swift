@@ -24,23 +24,39 @@ class locationsController: UIViewController {
     self.navigationController?.setNavigationBarHidden(true, animated: false)
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    navigationController?.setToolbarHidden(false, animated: false)
+    self.navigationController?.toolbar.barTintColor = UIColor.black.withAlphaComponent(0.5)
+  }
+  
   // MARK: - Segues
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // show top bar and hide bottom bar
     self.navigationController?.setNavigationBarHidden(false, animated: false)
-    let controller = (segue.destination as! ItemsController)
-    // set location for list
-    if segue.identifier == "showFridge" {
-        controller.detailItem = "fridge"
+    
+    if segue.identifier == "newItem" {
+      let controller = (segue.destination as! ItemsSearch)
+      controller.hidesBottomBarWhenPushed = true
+    }
+    else if segue.identifier == "showFridge" {
+      let controller = (segue.destination as! ItemsController)
+      controller.detailItem = "fridge"
+      controller.hidesBottomBarWhenPushed = true
     }
     else if segue.identifier == "showPantry" {
+      let controller = (segue.destination as! ItemsController)
       controller.detailItem = "pantry"
+      controller.hidesBottomBarWhenPushed = true
     }
     else if segue.identifier == "showFreezer" {
+      let controller = (segue.destination as! ItemsController)
       controller.detailItem = "freezer"
+      controller.hidesBottomBarWhenPushed = true
     }
     else if segue.identifier == "showSpice" {
+      let controller = (segue.destination as! ItemsController)
       controller.detailItem = "spice"
+      controller.hidesBottomBarWhenPushed = true
     }
-    controller.hidesBottomBarWhenPushed = true
   }
 }
