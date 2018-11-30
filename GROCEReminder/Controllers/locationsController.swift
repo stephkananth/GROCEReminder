@@ -26,21 +26,30 @@ class locationsController: UIViewController {
   
   // MARK: - Segues
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // show top bar and hide bottom bar
     self.navigationController?.setNavigationBarHidden(false, animated: false)
-    let controller = (segue.destination as! ItemsController)
-    // set location for list
-    if segue.identifier == "showFridge" {
-        controller.detailItem = "fridge"
+    
+    if segue.identifier == "newItem" {
+//      let navigationController = segue.destination as! UINavigationController
+//      let controller = navigationController.topViewController as! AddItemController
+//      controller.hidesBottomBarWhenPushed = true
     }
-    else if segue.identifier == "showPantry" {
-      controller.detailItem = "pantry"
+    else {
+      let controller = (segue.destination as! ItemsController)
+      // set location for list
+      if segue.identifier == "showFridge" {
+          controller.detailItem = "fridge"
+      }
+      else if segue.identifier == "showPantry" {
+        controller.detailItem = "pantry"
+      }
+      else if segue.identifier == "showFreezer" {
+        controller.detailItem = "freezer"
+      }
+      else if segue.identifier == "showSpice" {
+        controller.detailItem = "spice"
+      }
+      controller.hidesBottomBarWhenPushed = true
     }
-    else if segue.identifier == "showFreezer" {
-      controller.detailItem = "freezer"
-    }
-    else if segue.identifier == "showSpice" {
-      controller.detailItem = "spice"
-    }
-    controller.hidesBottomBarWhenPushed = true
   }
 }

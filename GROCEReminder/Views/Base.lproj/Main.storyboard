@@ -186,11 +186,11 @@
                         <viewLayoutGuide key="safeArea" id="cNN-AR-iVh"/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="Settings" width="171.66666666666669" id="YVx-NX-U5Z">
+                        <barButtonItem title="Settings" width="190.66666666666669" id="YVx-NX-U5Z">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                         <barButtonItem width="8" style="plain" systemItem="fixedSpace" id="nt5-AV-pCn"/>
-                        <barButtonItem title="Add Category" width="184.66666666666666" id="D1r-Cx-xLH">
+                        <barButtonItem title="Add Item" width="184.66666666666666" id="D1r-Cx-xLH">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </toolbarItems>

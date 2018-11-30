@@ -41,23 +41,81 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
   @IBOutlet weak var fridge: UIButton!
   
   private var location: String?
+  let dateFormatter = DateFormatter()
   
   // Pickers
   var pickerData: [[String]] = [[String]]()
   private var expPicker: UIDatePicker?
   private var datePicker: UIDatePicker?
   private var expiration: Date?
-  private var date: Date?
+  private var date: Date!
 
   weak var delegate: AddItemControllerDelegate?
   
+  var detailItem: String?
+  
+  func configureView() {
+    // Update the user interface for the detail item.
+    if let detail: String = self.detailItem {
+      if (detail == "fridge") {
+        self.title = "Refrigerator"
+      } else if (detail == "pantry") {
+        self.title = "Pantry"
+      } else if (detail == "freezer") {
+        self.title = "Freezer"
+      } else if (detail == "spice") {
+        self.title = "Spice Rack"
+      }
+      selectLocation(loc: detail)
+    }
+  }
+  
+  func selectLocation(loc: String) {
+    switch loc
+    {
+      case "freezer":
+        location = "freezer"
+        freezer.setImage( UIImage (named: "icon_freezer_select"), for: .normal)
+        fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
+        spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
+        pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
+        break
+      case "pantry":
+        location = "pantry"
+        pantry.setImage( UIImage (named: "icon_pantry_select"), for: .normal)
+        fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
+        spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
+        freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
+        break
+      case "spice":
+        location = "spice"
+        spiceRack.setImage( UIImage (named: "icon_seasoning_select"), for: .normal)
+        freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
+        fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
+        pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
+        break
+      default:
+        location = "fridge"
+        fridge.setImage( UIImage (named: "icon_fridge_select"), for: .normal)
+        spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
+        freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
+        pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
+        break
+    }
+  }
   
   // MARK: - General
   override func viewDidLoad() {
     super.viewDidLoad()
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(AddItemController.viewTapped(gestureRecognizer:)) )
     view.addGestureRecognizer(tapGesture)
+    
+    dateFormatter.dateFormat = "MM/dd/yy"
+    date = Date()
+    purchaseDateField.text = dateFormatter.string(from: date)
+    
     configurePickers()
+    self.configureView()
   }
     
   func configurePickers() {
@@ -95,17 +153,11 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
   
   // MARK: - Handlers
   @objc func expChanged(datePicker: UIDatePicker) {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "MM/dd/yy"
     expirationDateField.text = dateFormatter.string(from: datePicker.date)
-//    view.endEditing(true)
   }
   
   @objc func dateChanged(datePicker: UIDatePicker) {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "MM/dd/yy"
     purchaseDateField.text = dateFormatter.string(from: datePicker.date)
-//    view.endEditing(true)
   }
   
   @objc func viewTapped(gestureRecognizer: UIGestureRecognizer) {

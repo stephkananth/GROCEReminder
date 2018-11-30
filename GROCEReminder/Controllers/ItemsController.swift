@@ -105,6 +105,7 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
     } else if segue.identifier == "addItem" {
       let navigationController = segue.destination as! UINavigationController
       let controller = navigationController.topViewController as! AddItemController
+      controller.detailItem = self.title!
       controller.delegate = self
     }
   }
