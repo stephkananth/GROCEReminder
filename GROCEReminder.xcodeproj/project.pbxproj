@@ -19,6 +19,8 @@
 		851F2FC7218F9ADD00E7B7CD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851F2FC6218F9ADD00E7B7CD /* DetailViewController.swift */; };
 		856637B021996D3600473BE5 /* ItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856637AF21996D3500473BE5 /* ItemsViewModel.swift */; };
 		856637B421996E2B00473BE5 /* ItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856637B321996E2B00473BE5 /* ItemDetailViewModel.swift */; };
+		85A4731521B0CB5600BC3340 /* ShelfItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4731421B0CB5600BC3340 /* ShelfItem.swift */; };
+		85A4731721B0CB6E00BC3340 /* ShelfItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4731621B0CB6E00BC3340 /* ShelfItems.swift */; };
 		D6B0AF4321AC98C70084122E /* foods.json in Resources */ = {isa = PBXBuildFile; fileRef = D6B0AF4221AC98C70084122E /* foods.json */; };
 		D6E35CFC21AE749B000568AF /* locationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E35CFB21AE749B000568AF /* locationsController.swift */; };
 		D6E7CEBE21B08259003E5479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6E7CEBD21B08259003E5479 /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 		851F2FC6218F9ADD00E7B7CD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		856637AF21996D3500473BE5 /* ItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModel.swift; sourceTree = "<group>"; };
 		856637B321996E2B00473BE5 /* ItemDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewModel.swift; sourceTree = "<group>"; };
+		85A4731421B0CB5600BC3340 /* ShelfItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfItem.swift; sourceTree = "<group>"; };
+		85A4731621B0CB6E00BC3340 /* ShelfItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfItems.swift; sourceTree = "<group>"; };
 		D6B0AF4221AC98C70084122E /* foods.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = foods.json; sourceTree = "<group>"; };
 		D6E35CFB21AE749B000568AF /* locationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationsController.swift; sourceTree = "<group>"; };
 		D6E7CEBD21B08259003E5479 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 				851F2FC0218F94A200E7B7CD /* Item.swift */,
 				856637AF21996D3500473BE5 /* ItemsViewModel.swift */,
 				856637B321996E2B00473BE5 /* ItemDetailViewModel.swift */,
+				85A4731421B0CB5600BC3340 /* ShelfItem.swift */,
+				85A4731621B0CB6E00BC3340 /* ShelfItems.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -212,10 +218,12 @@
 				D6E35CFC21AE749B000568AF /* locationsController.swift in Sources */,
 				856637B421996E2B00473BE5 /* ItemDetailViewModel.swift in Sources */,
 				851F2FC5218F99D500E7B7CD /* AddItemController.swift in Sources */,
+				85A4731721B0CB6E00BC3340 /* ShelfItems.swift in Sources */,
 				850AD1692195E99A00FA1078 /* TableViewCell.swift in Sources */,
 				851F2FC1218F94A200E7B7CD /* Item.swift in Sources */,
 				851F2FAB218F8A9000E7B7CD /* GROCEReminder.xcdatamodeld in Sources */,
 				851F2FBE218F93F000E7B7CD /* ItemsController.swift in Sources */,
+				85A4731521B0CB5600BC3340 /* ShelfItem.swift in Sources */,
 				851F2FA3218F8A9000E7B7CD /* AppDelegate.swift in Sources */,
 				851F2FC7218F9ADD00E7B7CD /* DetailViewController.swift in Sources */,
 				856637B021996D3600473BE5 /* ItemsViewModel.swift in Sources */,
