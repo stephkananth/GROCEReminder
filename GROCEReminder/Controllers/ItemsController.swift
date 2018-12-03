@@ -132,7 +132,7 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
     
     // blur the background of the UIView
     listItem?.backgroundColor = .clear
-    let blurEffect = UIBlurEffect(style: .light)
+    let blurEffect = UIBlurEffect(style: .dark)
     let blurEffectView = UIVisualEffectView(effect: blurEffect)
     blurEffectView.frame = (listItem?.bounds)!
     listItem?.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
@@ -209,4 +209,3 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
     dismiss(animated: true, completion: nil)
   }
 }
-
