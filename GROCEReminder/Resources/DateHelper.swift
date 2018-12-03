@@ -10,6 +10,12 @@ import Foundation
 
 public class DateHelper {
   
+  let dateFormatter = DateFormatter()
+  
+  init() {
+    dateFormatter.dateFormat = "MM/dd/yy"
+  }
+  
   public func expDays(len: Int, metric: String) -> Int {
     var metricLen: Int
     
@@ -42,4 +48,12 @@ public class DateHelper {
     }
     return Calendar.current.date(byAdding: .day, value: days, to: date)!
   }
+  
+  public func string(from date: Date) -> String {
+    return dateFormatter.string(from: date)
+  }
+  
+//  public func toDate(date: String) -> Date {
+//
+//  }
 }
