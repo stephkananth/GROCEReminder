@@ -40,7 +40,7 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
   @IBOutlet weak var freezer: UIButton!
   @IBOutlet weak var fridge: UIButton!
   
-  private var location: String?
+  private var location: String? = ""
   
   // Pickers
   var pickerData: [[String]] = [[String]]()
@@ -65,7 +65,7 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
       let si = vm.shelfItem
       nameField.text = si.name
       setMetrics(si:si)
-      expiration = dateHelper.expDate( item: si, date: date )
+      expiration = dateHelper.expDate( location: location!, item: si, date: date )
       expirationDateField.text = dateHelper.string(from: expiration!)
       print(expirationDateField.text!)
       setLocation()
@@ -76,6 +76,9 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     var row1: Int
     var row2: Int
     switch (si.pantry_length, si.freeze_length, si.fridge_length) {
+      case (-1, -1, -1):
+        location = ""
+        row1 = 0
       case (_, -1, -1):
         location = "pantry"
         shelfLifeMetricLabel.text = si.pantry_metric

@@ -34,15 +34,15 @@ public class DateHelper {
     return len * metricLen
   }
   
-  public func expDate(item: ShelfItem, date: Date) -> Date {
+  public func expDate(location: String, item: ShelfItem, date: Date) -> Date {
     var days = 0
-    switch item.location {
+    switch location {
       case "fridge":
         days = expDays(len: item.fridge_length, metric: item.fridge_metric)
       case "freezer":
-        days = expDays(len: item.fridge_length, metric: item.fridge_metric)
+        days = expDays(len: item.freeze_length, metric: item.freeze_metric)
       case "pantry":
-        days = expDays(len: item.fridge_length, metric: item.fridge_metric)
+        days = expDays(len: item.pantry_length, metric: item.pantry_metric)
       default:
         days = 0
     }
