@@ -618,8 +618,8 @@
                                     <constraint firstItem="nCw-pg-td6" firstAttribute="leading" secondItem="dIJ-Qz-adm" secondAttribute="leading" constant="4" id="xdg-xb-ici"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJB-y1-K8a">
-                                <rect key="frame" x="122" y="393" width="46" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJB-y1-K8a">
+                                <rect key="frame" x="119" y="393" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="pjQ-SX-wEu"/>
                                 </constraints>
@@ -627,8 +627,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzi-B1-IX7">
-                                <rect key="frame" x="182" y="393" width="85" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzi-B1-IX7">
+                                <rect key="frame" x="179" y="393" width="85" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -650,7 +650,7 @@
                             <constraint firstItem="w69-eE-qNb" firstAttribute="top" secondItem="OCE-BM-ATG" secondAttribute="bottom" constant="10" id="ICO-73-NeH"/>
                             <constraint firstItem="dIJ-Qz-adm" firstAttribute="top" secondItem="RGn-dw-Ihl" secondAttribute="bottom" constant="16" id="JgZ-h2-arr"/>
                             <constraint firstItem="PJB-y1-K8a" firstAttribute="baseline" secondItem="qzi-B1-IX7" secondAttribute="baseline" id="KNb-Zx-o4q"/>
-                            <constraint firstItem="PJB-y1-K8a" firstAttribute="leading" secondItem="YVr-pU-RvE" secondAttribute="leading" constant="122" id="Kem-QO-Xt2"/>
+                            <constraint firstItem="PJB-y1-K8a" firstAttribute="leading" secondItem="YVr-pU-RvE" secondAttribute="leading" constant="119" id="Kem-QO-Xt2"/>
                             <constraint firstItem="YVr-pU-RvE" firstAttribute="trailing" secondItem="Mkx-ck-a31" secondAttribute="trailing" constant="1" id="LmY-dR-JRb"/>
                             <constraint firstItem="RGn-dw-Ihl" firstAttribute="leading" secondItem="QoS-NO-rAs" secondAttribute="leading" id="NpI-zr-J5r"/>
                             <constraint firstItem="dIJ-Qz-adm" firstAttribute="top" secondItem="U6h-6Y-cMi" secondAttribute="bottom" constant="2" id="ObI-7Z-UPx"/>
@@ -670,7 +670,7 @@
                             <constraint firstItem="RGn-dw-Ihl" firstAttribute="trailing" secondItem="QoS-NO-rAs" secondAttribute="trailing" id="ZuG-cs-eGO"/>
                             <constraint firstItem="Mkx-ck-a31" firstAttribute="top" secondItem="w69-eE-qNb" secondAttribute="bottom" constant="46" id="anw-ke-CZ4"/>
                             <constraint firstItem="PJB-y1-K8a" firstAttribute="top" secondItem="OCE-BM-ATG" secondAttribute="bottom" constant="19" id="cU5-Vm-eyK"/>
-                            <constraint firstItem="YVr-pU-RvE" firstAttribute="trailing" secondItem="qzi-B1-IX7" secondAttribute="trailing" constant="108" id="cbY-ci-pZi"/>
+                            <constraint firstItem="YVr-pU-RvE" firstAttribute="trailing" secondItem="qzi-B1-IX7" secondAttribute="trailing" constant="111" id="cbY-ci-pZi"/>
                             <constraint firstItem="w69-eE-qNb" firstAttribute="leading" secondItem="YVr-pU-RvE" secondAttribute="leading" constant="19" id="eQ1-lV-Lb1"/>
                             <constraint firstItem="pyh-Hj-Bpz" firstAttribute="leading" secondItem="ieW-mN-h5P" secondAttribute="leading" id="eh7-GT-e22"/>
                             <constraint firstItem="r9t-bJ-KfH" firstAttribute="top" secondItem="YVr-pU-RvE" secondAttribute="top" constant="11" id="fBO-A6-y2f"/>

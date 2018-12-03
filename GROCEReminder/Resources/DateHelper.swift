@@ -10,6 +10,12 @@ import Foundation
 
 public class DateHelper {
   
+  let dateFormatter = DateFormatter()
+  
+  init() {
+    dateFormatter.dateFormat = "MM/dd/yy"
+  }
+  
   public func expDays(len: Int, metric: String) -> Int {
     var metricLen: Int
     
@@ -28,18 +34,26 @@ public class DateHelper {
     return len * metricLen
   }
   
-  public func expDate(item: ShelfItem, date: Date) -> Date {
+  public func expDate(location: String, item: ShelfItem, date: Date) -> Date {
     var days = 0
-    switch item.location {
+    switch location {
       case "fridge":
         days = expDays(len: item.fridge_length, metric: item.fridge_metric)
       case "freezer":
-        days = expDays(len: item.fridge_length, metric: item.fridge_metric)
+        days = expDays(len: item.freeze_length, metric: item.freeze_metric)
       case "pantry":
-        days = expDays(len: item.fridge_length, metric: item.fridge_metric)
+        days = expDays(len: item.pantry_length, metric: item.pantry_metric)
       default:
         days = 0
     }
     return Calendar.current.date(byAdding: .day, value: days, to: date)!
   }
+  
+  public func string(from date: Date) -> String {
+    return dateFormatter.string(from: date)
+  }
+  
+//  public func toDate(date: String) -> Date {
+//
+//  }
 }
