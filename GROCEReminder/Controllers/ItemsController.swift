@@ -79,7 +79,7 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
       do {
         let result = try context.fetch(request)
         for data in result as! [NSManagedObject] {
-          let date = data.value(forKey: "expirationDate") as! Date
+          let date = data.value(forKey: "expiration_date") as! Date
           print(date)
           print(Date.nextWeek)
           print(date <= Date.nextWeek)
