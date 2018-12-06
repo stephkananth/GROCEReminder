@@ -72,6 +72,9 @@
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jz6-WG-4q7">
                                         <rect key="frame" x="9" y="332" width="150" height="151"/>
                                         <state key="normal" image="category_expired"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="showExpiring" id="or1-pN-toI"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_expired" translatesAutoresizingMaskIntoConstraints="NO" id="fRk-co-ZDf">
                                         <rect key="frame" x="32" y="351" width="104" height="84"/>
@@ -832,7 +835,7 @@
         <image name="rectangle5" width="388" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="U34-mY-zPa"/>
-        <segue reference="Sct-Bc-TBd"/>
+        <segue reference="NvN-wf-bzk"/>
+        <segue reference="or1-pN-toI"/>
     </inferredMetricsTieBreakers>
 </document>
