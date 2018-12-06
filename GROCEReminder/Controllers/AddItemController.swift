@@ -14,7 +14,6 @@ import UIKit
 
 protocol AddItemControllerDelegate: class {
   func addItemControllerDidCancel(controller: AddItemController)
-  
   func addItemController(controller: AddItemController, didFinishAddingItem item: Item)
 }
 
@@ -53,6 +52,7 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
   
   var detailItem: String?
   var dateHelper = DateHelper()
+//  var calHelpter =
   var viewModel: ItemDetailViewModel?
   
   func configureView() {
@@ -79,21 +79,25 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
       case (-1, -1, -1):
         location = ""
         row1 = 0
+        break
       case (_, -1, -1):
         location = "pantry"
         shelfLifeMetricLabel.text = si.pantry_metric
         shelfLifeAmtLabel.text = String(si.pantry_length)
         row1 = si.pantry_length
+        break
       case (-1, _, -1):
         location = "freezer"
         shelfLifeMetricLabel.text = si.freeze_metric
         shelfLifeAmtLabel.text = String(si.freeze_length)
         row1 = si.freeze_length
+        break
       case (-1, -1, _):
         location = "fridge"
         shelfLifeMetricLabel.text = si.fridge_metric
         shelfLifeAmtLabel.text = String(si.fridge_length)
         row1 = si.fridge_length
+        break
       case (_, _, _):
         location = ""
         row1 = 0
@@ -101,32 +105,44 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     switch shelfLifeMetricLabel.text! {
       case "Days":
         row2 = 0
+        break
       case "weeks":
         row2 = 1
+        break
       case "Months":
         row2 = 2
+        break
       case "Years":
         row2 = 3
+        break
       default:
         row2 = 0
+        break
     }
     shelfLife!.selectRow(row1, inComponent: 0, animated: true)
-    shelfLife!.selectRow(row2, inComponent: 0, animated: true)
+    shelfLife!.selectRow(row2, inComponent: 1, animated: true)
+    shelfLifeAmtLabel.text = pickerData[0][row1]
+    shelfLifeMetricLabel.text = pickerData[1][row2]
   }
   
   func selectLocation(loc: String) {
-    switch location
+    switch loc
     {
       case "freezer":
         location = "Freezer"
+        break
       case "pantry":
         location = "Pantry"
+        break
       case "spice":
         location = "Spice Rack"
+        break
       case "fridge":
         location = "Refrigerator"
+        break
       default:
         location = ""
+        break
     }
   }
   
@@ -219,15 +235,53 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
   // MARK: - Handlers
   @objc func expChanged(datePicker: UIDatePicker) {
     expirationDateField.text = dateHelper.string(from: datePicker.date)
+    expiration = datePicker.date
+    updateShelfLife()
   }
   
   @objc func dateChanged(datePicker: UIDatePicker) {
     purchaseDateField.text = dateHelper.string(from: datePicker.date)
+    date = datePicker.date
+    let days = dateHelper.expDays(len: Int(shelfLifeAmtLabel.text!)!, metric: shelfLifeMetricLabel.text!)
+    let newExp = Calendar.current.date(byAdding: .day, value: days, to: date!)
+    expPicker?.date = newExp!
+    expiration = newExp
+    expirationDateField.text = dateHelper.string(from: expiration!)
   }
   
   @objc func viewTapped(gestureRecognizer: UIGestureRecognizer) {
     view.endEditing(true)
-    shelfLife?.isHidden = true
+    if !(shelfLife?.isHidden)! { shelfLife?.isHidden = true }
+  }
+  
+  func updateShelfLife() {
+    let days = expiration!.days(from: date)+1
+    let row1: Int
+    var row2: Int
+    
+    switch days {
+      case _ where (days > 7 && days < 30):// % 7 == 0): // weeks
+        row1 = days/7
+        row2 = 1
+        break
+      case _ where (days >= 30 && days < 365)://% 30 == 0): // months
+        row1 = days/30
+        row2 = 2
+        break
+      case _ where (days >= 365): //% 365 == 0): // years
+        row1 = days/365
+        row2 = 3
+        break
+      default: // days
+        row1 = days
+        row2 = 0
+        break
+    }
+    
+    shelfLife!.selectRow(row1, inComponent: 0, animated: false)
+    shelfLife!.selectRow(row2, inComponent: 1, animated: false)
+    shelfLifeAmtLabel.text = pickerData[0][row1]
+    shelfLifeMetricLabel.text = pickerData[1][row2]
   }
   
   
@@ -325,6 +379,11 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     else {
       shelfLifeMetricLabel.text = pickerData[component][row]
     }
+    let days = dateHelper.expDays(len: Int(shelfLifeAmtLabel.text!)!, metric: shelfLifeMetricLabel.text!)
+    let newExp = Calendar.current.date(byAdding: .day, value: days, to: date!)
+    expPicker?.date = newExp!
+    expiration = newExp
+    expirationDateField.text = dateHelper.string(from: expiration!)
   }
   
 }
