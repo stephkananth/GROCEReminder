@@ -8,6 +8,34 @@ import UIKit
 import Foundation
 import CoreData
 
+// https://stackoverflow.com/questions/44009804/swift-3-how-to-get-date-for-tomorrow-and-yesterday-take-care-special-case-ne
+extension Date {
+  static var yesterday: Date {
+    return Calendar.current.date(byAdding: .day, value: -1, to: Date().noon)!
+  }
+  static var tomorrow: Date {
+    return Calendar.current.date(byAdding: .day, value: 1, to: Date().noon)!
+  }
+  static var nextWeek: Date {
+    return Calendar.current.date(byAdding: .day, value: 7, to: Date().noon)!
+  }
+  var dayBefore: Date {
+    return Calendar.current.date(byAdding: .day, value: -1, to: noon)!
+  }
+  var dayAfter: Date {
+    return Calendar.current.date(byAdding: .day, value: 1, to: noon)!
+  }
+  var noon: Date {
+    return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
+  }
+  var month: Int {
+    return Calendar.current.component(.month,  from: self)
+  }
+  var isLastDayOfMonth: Bool {
+    return dayAfter.month != month
+  }
+}
+
 class ItemsController: UITableViewController, AddItemControllerDelegate {
   
   // MARK: - Properties
@@ -34,6 +62,8 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
         self.title = "Freezer"
       } else if (detail == "spice") {
         self.title = "Spice Rack"
+      } else if (detail == "expiring") {
+        self.title = "Expiring Soon"
       }
       selectLocation(loc: detail)
     }
@@ -45,15 +75,33 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
     let context = appDelegate.persistentContainer.viewContext
     let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Food")
     request.returnsObjectsAsFaults = false
-    request.predicate = NSPredicate(format: "location == %@", loc)
-    do {
-      let result = try context.fetch(request)
-      for data in result as! [NSManagedObject] {
-        self.loadItems(data: data)
-        print(data.value(forKey: "name") as! String)
+    if (self.detailItem! == "expiring") {
+      do {
+        let result = try context.fetch(request)
+        for data in result as! [NSManagedObject] {
+          let date = data.value(forKey: "expiration_date") as! Date
+          print(date)
+          print(Date.nextWeek)
+          print(date <= Date.nextWeek)
+          if (date <= Date.nextWeek) {
+            self.loadItems(data: data)
+            print(data.value(forKey: "name") as! String)
+          }
+        }
+      } catch {
+        print("Failed")
       }
-    } catch {
-      print("Failed")
+    } else {
+      request.predicate = NSPredicate(format: "location == %@", loc)
+      do {
+        let result = try context.fetch(request)
+        for data in result as! [NSManagedObject] {
+          self.loadItems(data: data)
+          print(data.value(forKey: "name") as! String)
+        }
+      } catch {
+        print("Failed")
+      }
     }
   }
   

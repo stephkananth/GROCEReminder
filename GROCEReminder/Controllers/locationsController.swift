@@ -17,6 +17,7 @@ class locationsController: UIViewController {
   @IBOutlet weak var pantryButton: UIButton!
   @IBOutlet weak var freezerButton: UIButton!
   @IBOutlet weak var spiceButton: UIButton!
+  @IBOutlet weak var expiringButton: UIButton!
   
   // MARK: - General
   override func viewDidLoad() {
@@ -56,6 +57,11 @@ class locationsController: UIViewController {
     else if segue.identifier == "showSpice" {
       let controller = (segue.destination as! ItemsController)
       controller.detailItem = "spice"
+      controller.hidesBottomBarWhenPushed = true
+    }
+    else if segue.identifier == "showExpiring" {
+      let controller = (segue.destination as! ItemsController)
+      controller.detailItem = "expiring"
       controller.hidesBottomBarWhenPushed = true
     }
   }
