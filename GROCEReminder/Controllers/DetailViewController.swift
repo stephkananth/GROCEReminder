@@ -31,7 +31,7 @@ class DetailViewController: UIViewController {
   @IBOutlet weak var freezerButton: UIButton!
   @IBOutlet weak var pantryButton: UIButton!
   @IBOutlet weak var spiceButton: UIButton!
-    
+  
   
   var viewModel: ItemDetailViewModel?
   
@@ -68,48 +68,48 @@ class DetailViewController: UIViewController {
   
   func setLocationIcons( loc: String ) {
     switch loc {
-      case "fridge":
-        self.fridgeButton.isSelected = true
-        self.freezerButton.isEnabled = false
-        self.pantryButton.isEnabled = false
-        self.spiceButton.isEnabled = false
-        break
-      case "freezer":
-        self.freezerButton.isSelected = true
-        self.fridgeButton.isEnabled = false
-        self.pantryButton.isEnabled = false
-        self.spiceButton.isEnabled = false
-        break
-      case "pantry":
-        self.pantryButton.isSelected = true
-        self.freezerButton.isEnabled = false
-        self.fridgeButton.isEnabled = false
-        self.spiceButton.isEnabled = false
-        break
-      case "spice":
-        self.spiceButton.isSelected = true
-        self.freezerButton.isEnabled = false
-        self.pantryButton.isEnabled = false
-        self.fridgeButton.isEnabled = false
-        break
-      default:
-        break
+    case "fridge":
+      self.fridgeButton.isSelected = true
+      self.freezerButton.isEnabled = false
+      self.pantryButton.isEnabled = false
+      self.spiceButton.isEnabled = false
+      break
+    case "freezer":
+      self.freezerButton.isSelected = true
+      self.fridgeButton.isEnabled = false
+      self.pantryButton.isEnabled = false
+      self.spiceButton.isEnabled = false
+      break
+    case "pantry":
+      self.pantryButton.isSelected = true
+      self.freezerButton.isEnabled = false
+      self.fridgeButton.isEnabled = false
+      self.spiceButton.isEnabled = false
+      break
+    case "spice":
+      self.spiceButton.isSelected = true
+      self.freezerButton.isEnabled = false
+      self.pantryButton.isEnabled = false
+      self.fridgeButton.isEnabled = false
+      break
+    default:
+      break
     }
   }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    let button = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonPress))
+    self.navigationItem.rightBarButtonItem = button
+    self.configureView()
+  }
+  
+  @objc func editButtonPress() {
     
-    override func viewDidLoad() {
-      super.viewDidLoad()
-      let button = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonPress))
-      self.navigationItem.rightBarButtonItem = button
-      self.configureView()
-    }
-    
-    @objc func editButtonPress() {
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
-    }
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
 }

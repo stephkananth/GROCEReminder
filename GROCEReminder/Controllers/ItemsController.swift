@@ -122,7 +122,7 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
     let cellNib = UINib(nibName: "TableViewCell", bundle: nil)
     tableView.register(cellNib, forCellReuseIdentifier: "cell")
     
-//    configureView()
+    //    configureView()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -193,8 +193,8 @@ class ItemsController: UITableViewController, AddItemControllerDelegate {
     cell.name!.text = item.name
     cell.expirationDate.text = item.expirationDate.toString(dateFormat: "MM/dd/YY")
     
-//    cell.bgView.layer.cornerRadius = 5
-//    cell.bgView.layer.masksToBounds = true
+    //    cell.bgView.layer.cornerRadius = 5
+    //    cell.bgView.layer.masksToBounds = true
     
     return cell
   }

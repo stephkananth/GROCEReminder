@@ -50,18 +50,18 @@ class ItemsSearch: UIViewController, UITableViewDataSource, UITableViewDelegate,
   override func viewDidAppear(_ animated: Bool) {
     self.navigationController?.setNavigationBarHidden(false, animated: false)
   }
-    
-    // MARK: - Table View
+  
+  // MARK: - Table View
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRows()
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SearchTableViewCell
-        cell.name?.text = viewModel.titleForRowAtIndexPath(indexPath)
-        cell.category?.text = viewModel.summaryForRowAtIndexPath(indexPath)
-        return cell
-    }
+    return viewModel.numberOfRows()
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SearchTableViewCell
+    cell.name?.text = viewModel.titleForRowAtIndexPath(indexPath)
+    cell.category?.text = viewModel.summaryForRowAtIndexPath(indexPath)
+    return cell
+  }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     performSegue(withIdentifier: "addSearchItem", sender: indexPath)
@@ -69,10 +69,10 @@ class ItemsSearch: UIViewController, UITableViewDataSource, UITableViewDelegate,
   
   // MARK: - Segues
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    if let addItemVC = segue.destination as? AddItemController,
-//      let indexPath = sender as? IndexPath {
-//      addItemVC.viewModel = viewModel.detailViewModelForRowAtIndexPath(indexPath)
-//    }
+    //    if let addItemVC = segue.destination as? AddItemController,
+    //      let indexPath = sender as? IndexPath {
+    //      addItemVC.viewModel = viewModel.detailViewModelForRowAtIndexPath(indexPath)
+    //    }
     if segue.identifier == "addSearchItem" {
       let navigationController = segue.destination as! UINavigationController
       let controller = navigationController.topViewController as! AddItemController
@@ -108,7 +108,7 @@ class ItemsSearch: UIViewController, UITableViewDataSource, UITableViewDelegate,
     let navController = UINavigationController(rootViewController: viewController)
     viewController.hidesBottomBarWhenPushed = false
     self.present(navController, animated:true, completion: nil)
-//    present(viewController, animated: true, completion: nil)
+    //    present(viewController, animated: true, completion: nil)
   }
   
 }
