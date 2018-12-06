@@ -88,6 +88,7 @@
 		851F2FA1218F8A9000E7B7CD /* GROCEReminder */ = {
 			isa = PBXGroup;
 			children = (
+				85BF154021B9A87400964735 /* Tests */,
 				D64027D021B12B240089571E /* ViewModels */,
 				851F2FBF218F941800E7B7CD /* Models */,
 				851F2FB9218F903F00E7B7CD /* AppDelegate */,
@@ -151,6 +152,13 @@
 				85A4731421B0CB5600BC3340 /* ShelfItem.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		85BF154021B9A87400964735 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		D64027CB21B1163D0089571E /* Data */ = {
