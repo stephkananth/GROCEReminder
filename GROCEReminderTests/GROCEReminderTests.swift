@@ -10,7 +10,7 @@ import XCTest
 @testable import GROCEReminder
 
 class GROCEReminderTests: XCTestCase {
-
+  
   // Testing ../GROCEReminder/Models/Item.swift
   func test_Item() {
     let testItem = Item(name: "Milk", location: "fridge", purchase_date: Date(), expiration_date: Date())

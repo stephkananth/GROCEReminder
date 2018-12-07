@@ -52,7 +52,7 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
   
   var detailItem: String?
   var dateHelper = DateHelper()
-//  var calHelpter =
+  //  var calHelpter =
   var viewModel: ItemDetailViewModel?
   
   func configureView() {
@@ -76,48 +76,48 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     var row1: Int
     var row2: Int
     switch (si.pantry_length, si.freeze_length, si.fridge_length) {
-      case (-1, -1, -1):
-        location = ""
-        row1 = 0
-        break
-      case (_, -1, -1):
-        location = "pantry"
-        shelfLifeMetricLabel.text = si.pantry_metric
-        shelfLifeAmtLabel.text = String(si.pantry_length)
-        row1 = si.pantry_length
-        break
-      case (-1, _, -1):
-        location = "freezer"
-        shelfLifeMetricLabel.text = si.freeze_metric
-        shelfLifeAmtLabel.text = String(si.freeze_length)
-        row1 = si.freeze_length
-        break
-      case (-1, -1, _):
-        location = "fridge"
-        shelfLifeMetricLabel.text = si.fridge_metric
-        shelfLifeAmtLabel.text = String(si.fridge_length)
-        row1 = si.fridge_length
-        break
-      case (_, _, _):
-        location = ""
-        row1 = 0
+    case (-1, -1, -1):
+      location = ""
+      row1 = 0
+      break
+    case (_, -1, -1):
+      location = "pantry"
+      shelfLifeMetricLabel.text = si.pantry_metric
+      shelfLifeAmtLabel.text = String(si.pantry_length)
+      row1 = si.pantry_length
+      break
+    case (-1, _, -1):
+      location = "freezer"
+      shelfLifeMetricLabel.text = si.freeze_metric
+      shelfLifeAmtLabel.text = String(si.freeze_length)
+      row1 = si.freeze_length
+      break
+    case (-1, -1, _):
+      location = "fridge"
+      shelfLifeMetricLabel.text = si.fridge_metric
+      shelfLifeAmtLabel.text = String(si.fridge_length)
+      row1 = si.fridge_length
+      break
+    case (_, _, _):
+      location = ""
+      row1 = 0
     }
     switch shelfLifeMetricLabel.text! {
-      case "Days":
-        row2 = 0
-        break
-      case "weeks":
-        row2 = 1
-        break
-      case "Months":
-        row2 = 2
-        break
-      case "Years":
-        row2 = 3
-        break
-      default:
-        row2 = 0
-        break
+    case "Days":
+      row2 = 0
+      break
+    case "weeks":
+      row2 = 1
+      break
+    case "Months":
+      row2 = 2
+      break
+    case "Years":
+      row2 = 3
+      break
+    default:
+      row2 = 0
+      break
     }
     shelfLife!.selectRow(row1, inComponent: 0, animated: true)
     shelfLife!.selectRow(row2, inComponent: 1, animated: true)
@@ -128,21 +128,21 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
   func selectLocation(loc: String) {
     switch loc
     {
-      case "freezer":
-        location = "Freezer"
-        break
-      case "pantry":
-        location = "Pantry"
-        break
-      case "spice":
-        location = "Spice Rack"
-        break
-      case "fridge":
-        location = "Refrigerator"
-        break
-      default:
-        location = ""
-        break
+    case "freezer":
+      location = "Freezer"
+      break
+    case "pantry":
+      location = "Pantry"
+      break
+    case "spice":
+      location = "Spice Rack"
+      break
+    case "fridge":
+      location = "Refrigerator"
+      break
+    default:
+      location = ""
+      break
     }
   }
   
@@ -260,22 +260,22 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     var row2: Int
     
     switch days {
-      case _ where (days > 7 && days < 30):// % 7 == 0): // weeks
-        row1 = days/7
-        row2 = 1
-        break
-      case _ where (days >= 30 && days < 365)://% 30 == 0): // months
-        row1 = days/30
-        row2 = 2
-        break
-      case _ where (days >= 365): //% 365 == 0): // years
-        row1 = days/365
-        row2 = 3
-        break
-      default: // days
-        row1 = days
-        row2 = 0
-        break
+    case _ where (days > 7 && days < 30):// % 7 == 0): // weeks
+      row1 = days/7
+      row2 = 1
+      break
+    case _ where (days >= 30 && days < 365)://% 30 == 0): // months
+      row1 = days/30
+      row2 = 2
+      break
+    case _ where (days >= 365): //% 365 == 0): // years
+      row1 = days/365
+      row2 = 3
+      break
+    default: // days
+      row1 = days
+      row2 = 0
+      break
     }
     
     shelfLife!.selectRow(row1, inComponent: 0, animated: false)
