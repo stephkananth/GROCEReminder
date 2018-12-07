@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "vegetarian.png",
+      "filename" : "bev.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "vegetarian@2x.png",
+      "filename" : "bev@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "vegetarian@3x.png",
+      "filename" : "bev@3x.png",
       "scale" : "3x"
     }
   ],

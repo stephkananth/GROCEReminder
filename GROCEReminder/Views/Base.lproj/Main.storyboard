@@ -353,6 +353,10 @@
                                     <action selector="locationButtonClick:" destination="b0r-31-TEI" eventType="touchUpInside" id="Vjd-Df-Ocj"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="28f-dO-GgU">
+                                <rect key="frame" x="64" y="95" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -412,6 +416,7 @@
                         <viewLayoutGuide key="safeArea" id="t2g-Kg-mEA"/>
                     </view>
                     <connections>
+                        <outlet property="CategoryIcon" destination="28f-dO-GgU" id="MW9-Sd-RlM"/>
                         <outlet property="expirationDateLabel" destination="szQ-bR-aQ2" id="k55-TK-Ls6"/>
                         <outlet property="freezerButton" destination="itC-p6-a3f" id="1EU-hx-TuL"/>
                         <outlet property="fridgeButton" destination="sff-fm-hhW" id="lRG-0f-0Y6"/>
