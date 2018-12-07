@@ -17,13 +17,32 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadingBG" translatesAutoresizingMaskIntoConstraints="NO" id="l7M-8Q-xQ2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LogoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="u2v-TF-5cD">
+                                <rect key="frame" x="77" y="223" width="220" height="220"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="l7M-8Q-xQ2" secondAttribute="trailing" id="1cW-mU-9za"/>
+                            <constraint firstItem="l7M-8Q-xQ2" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="9bT-eO-GxG"/>
+                            <constraint firstItem="l7M-8Q-xQ2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="pX4-iQ-53p"/>
+                            <constraint firstItem="l7M-8Q-xQ2" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="vbJ-2h-oyU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LoadingBG" width="210" height="312"/>
+        <image name="LogoIcon" width="182" height="182"/>
+    </resources>
 </document>

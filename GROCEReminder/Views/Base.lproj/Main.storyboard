@@ -800,7 +800,7 @@
     </scenes>
     <resources>
         <image name="BackgroundFood" width="414" height="736"/>
-        <image name="GrocerReminder_title" width="371" height="69"/>
+        <image name="GrocerReminder_title" width="381" height="69"/>
         <image name="category_expired" width="155" height="152"/>
         <image name="category_freezer" width="155" height="151"/>
         <image name="category_fridge" width="155" height="152"/>
