@@ -23,7 +23,8 @@ extension Date
 
 class DetailViewController: UIViewController {
   
-  @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var CategoryIcon: UIImageView!
+    @IBOutlet weak var locationLabel: UILabel!
   @IBOutlet weak var purchaseDateLabel: UILabel!
   @IBOutlet weak var expirationDateLabel: UILabel!
   
@@ -63,6 +64,41 @@ class DetailViewController: UIViewController {
       if let expirationDate = self.expirationDateLabel {
         expirationDate.text = detail.expirationDate.toString(dateFormat: "MM/dd/YY")
       }
+        if let cat = self.CategoryIcon {
+          cat.image = UIImage (named: "food_gen")
+//            switch detail.category {
+//            case "Baby Food":
+//                break
+//            case "Beverages":
+//                break
+//            case "Condiments, Sauces & Canned Goods":
+//                break
+//            case "Food Purchased Frozen":
+//                break
+//            case "Grains, Beans & Pasta":
+//                break
+//            case "Shelf Stable Foods":
+//                break
+//            case "Seafood":
+//                break
+//            case "Vegetarian Proteins":
+//                break
+//            case "Deli & Prepared Foods":
+//                break
+//            case "Dairy Products & Eggs":
+//                break
+//            case "Meat":
+//                break
+//            case "Produce":
+//                break
+//            case "Baked Goods":
+//                break
+//            case "Dairy Products & Eggs":
+//                break
+//            default:
+//                cat.image = UIImage (named: "food_gen")
+//            }
+        }
     }
   }
   
