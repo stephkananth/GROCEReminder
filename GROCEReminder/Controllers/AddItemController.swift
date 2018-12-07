@@ -47,7 +47,7 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
   private var datePicker: UIDatePicker?
   private var expiration: Date?
   private var date: Date!
-
+  
   weak var delegate: AddItemControllerDelegate?
   
   var detailItem: String?
@@ -149,36 +149,36 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
   func setLocation() {
     switch location
     {
-      case "freezer":
-        location = "Freezer"
-        freezer.setImage( UIImage (named: "icon_freezer_select"), for: .normal)
-        fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
-        spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
-        pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
-        break
-      case "pantry":
-        location = "Pantry"
-        pantry.setImage( UIImage (named: "icon_pantry_select"), for: .normal)
-        fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
-        spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
-        freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
-        break
-      case "spice":
-        location = "Spice Rack"
-        spiceRack.setImage( UIImage (named: "icon_seasoning_select"), for: .normal)
-        freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
-        fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
-        pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
-        break
-      case "fridge":
-        location = "Refrigerator"
-        fridge.setImage( UIImage (named: "icon_fridge_select"), for: .normal)
-        spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
-        freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
-        pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
-        break
-      default:
-        break
+    case "freezer":
+      location = "Freezer"
+      freezer.setImage( UIImage (named: "icon_freezer_select"), for: .normal)
+      fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
+      spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
+      pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
+      break
+    case "pantry":
+      location = "Pantry"
+      pantry.setImage( UIImage (named: "icon_pantry_select"), for: .normal)
+      fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
+      spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
+      freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
+      break
+    case "spice":
+      location = "Spice Rack"
+      spiceRack.setImage( UIImage (named: "icon_seasoning_select"), for: .normal)
+      freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
+      fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
+      pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
+      break
+    case "fridge":
+      location = "Refrigerator"
+      fridge.setImage( UIImage (named: "icon_fridge_select"), for: .normal)
+      spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
+      freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
+      pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
+      break
+    default:
+      break
     }
   }
   
@@ -198,7 +198,7 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
   override func viewDidAppear(_ animated: Bool) {
     self.navigationController?.setNavigationBarHidden(false, animated: false)
   }
-    
+  
   func configurePickers() {
     // experation date picker
     expPicker = UIDatePicker()
@@ -300,7 +300,7 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     print("HERE")
     delegate?.addItemController(controller: self, didFinishAddingItem: item)
   }
-    
+  
   @IBAction func shelfLifeButtonPress() {
     shelfLife?.isHidden = !(shelfLife?.isHidden)!
     view.endEditing(true)
@@ -309,34 +309,34 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
   @IBAction func locationButtonClick(_ sender: UIButton) {
     switch sender.tag
     {
-      case 1:
-        location = "freezer"
-        freezer.setImage( UIImage (named: "icon_freezer_select"), for: .normal)
-        fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
-        spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
-        pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
-        break
-      case 2:
-        location = "pantry"
-        pantry.setImage( UIImage (named: "icon_pantry_select"), for: .normal)
-        fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
-        spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
-        freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
-        break
-      case 3:
-        location = "spice"
-        spiceRack.setImage( UIImage (named: "icon_seasoning_select"), for: .normal)
-        freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
-        fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
-        pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
-        break
-      default:
-        location = "fridge"
-        fridge.setImage( UIImage (named: "icon_fridge_select"), for: .normal)
-        spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
-        freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
-        pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
-        break
+    case 1:
+      location = "freezer"
+      freezer.setImage( UIImage (named: "icon_freezer_select"), for: .normal)
+      fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
+      spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
+      pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
+      break
+    case 2:
+      location = "pantry"
+      pantry.setImage( UIImage (named: "icon_pantry_select"), for: .normal)
+      fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
+      spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
+      freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
+      break
+    case 3:
+      location = "spice"
+      spiceRack.setImage( UIImage (named: "icon_seasoning_select"), for: .normal)
+      freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
+      fridge.setImage( UIImage (named: "icon_fridge"), for: .normal)
+      pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
+      break
+    default:
+      location = "fridge"
+      fridge.setImage( UIImage (named: "icon_fridge_select"), for: .normal)
+      spiceRack.setImage( UIImage (named: "icon_seasoning"), for: .normal)
+      freezer.setImage( UIImage (named: "icon_freezer"), for: .normal)
+      pantry.setImage( UIImage (named: "icon_pantry"), for: .normal)
+      break
     }
   }
   

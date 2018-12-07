@@ -17,9 +17,9 @@ public class ShelfItems {
     return allShelfItems().sorted(by: {$0.name < $1.name})
   }
   
-//  public static func search( item: ShelfItem ) -> ShelfItem {
-//    
-//  }
+  //  public static func search( item: ShelfItem ) -> ShelfItem {
+  //
+  //  }
   
   public static func filterByItemType( type: String ) -> [ShelfItem] {
     let allItems = allShelfItems()
