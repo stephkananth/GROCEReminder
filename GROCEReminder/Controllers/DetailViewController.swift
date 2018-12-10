@@ -66,38 +66,49 @@ class DetailViewController: UIViewController {
       }
         if let cat = self.CategoryIcon {
           cat.image = UIImage (named: "food_gen")
-//            switch detail.category {
-//            case "Baby Food":
-//                break
-//            case "Beverages":
-//                break
-//            case "Condiments, Sauces & Canned Goods":
-//                break
-//            case "Food Purchased Frozen":
-//                break
-//            case "Grains, Beans & Pasta":
-//                break
-//            case "Shelf Stable Foods":
-//                break
-//            case "Seafood":
-//                break
-//            case "Vegetarian Proteins":
-//                break
-//            case "Deli & Prepared Foods":
-//                break
-//            case "Dairy Products & Eggs":
-//                break
-//            case "Meat":
-//                break
-//            case "Produce":
-//                break
-//            case "Baked Goods":
-//                break
-//            case "Dairy Products & Eggs":
-//                break
-//            default:
-//                cat.image = UIImage (named: "food_gen")
-//            }
+          switch detail.category {
+            case "Baby Food":
+              cat.image = UIImage (named: "food_gen")
+              break
+            case "Beverages":
+              cat.image = UIImage (named: "food_gen")
+              break
+            case "Condiments, Sauces & Canned Goods":
+              cat.image = UIImage (named: "food_gen")
+              break
+            case "Food Purchased Frozen":
+              cat.image = UIImage (named: "Frozen")
+              break
+            case "Grains, Beans & Pasta":
+              cat.image = UIImage (named: "grain")
+              break
+            case "Shelf Stable Foods":
+              cat.image = UIImage (named: "ShelfStable")
+              break
+            case "Seafood":
+              cat.image = UIImage (named: "Seafood")
+              break
+            case "Vegetarian Proteins":
+              cat.image = UIImage (named: "Vegetarian")
+              break
+            case "Deli & Prepared Foods":
+              cat.image = UIImage (named: "Deli")
+              break
+            case "Dairy Products & Eggs":
+              cat.image = UIImage (named: "food_gen")
+              break
+            case "Meat":
+              cat.image = UIImage (named: "Meat")
+              break
+            case "Produce":
+              cat.image = UIImage (named: "Produce")
+              break
+            case "Baked Goods":
+              cat.image = UIImage (named: "food_gen")
+              break
+            default:
+                cat.image = UIImage (named: "food_gen")
+          }
         }
     }
   }

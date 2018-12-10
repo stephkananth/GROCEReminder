@@ -15,14 +15,16 @@ class Item {
   var location: String
   var name: String
   var purchaseDate: Date
+  var category: String
   
   // MARK: - General
   
-  init(name: String, location: String, purchase_date: Date, expiration_date: Date) {
+  init(name: String, location: String, purchase_date: Date, expiration_date: Date, category: String) {
     self.name = name
     self.location = location
     self.purchaseDate = purchase_date
     self.expirationDate = expiration_date
+    self.category = category
   }
   
 }
