@@ -40,6 +40,7 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
   @IBOutlet weak var fridge: UIButton!
   
   private var location: String? = ""
+  private var category: String? = "N/A"
   
   // Pickers
   var pickerData: [[String]] = [[String]]()
@@ -65,6 +66,7 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
       let si = vm.shelfItem
       nameField.text = si.name
       setMetrics(si:si)
+      category = si.category
       expiration = dateHelper.expDate( location: location!, item: si, date: date )
       expirationDateField.text = dateHelper.string(from: expiration!)
       print(expirationDateField.text!)
@@ -295,7 +297,8 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     let location:String = self.location!
     let purchase_date:Date = date!
     let expiration_date:Date = expiration!
-    let item = Item(name: name, location: location, purchase_date: purchase_date, expiration_date: expiration_date)
+    let cat:String = self.category!
+    let item = Item(name: name, location: location, purchase_date: purchase_date, expiration_date: expiration_date, category: cat)
     saveItem(item: item)
     print("HERE")
     delegate?.addItemController(controller: self, didFinishAddingItem: item)
@@ -352,6 +355,7 @@ class AddItemController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     newItem.setValue(item.location, forKey: "location")
     newItem.setValue(item.expirationDate, forKey: "expiration_date")
     newItem.setValue(item.purchaseDate, forKey: "purchase_date")
+    newItem.setValue(item.category, forKey: "category")
     do {
       try context.save()
     } catch {
